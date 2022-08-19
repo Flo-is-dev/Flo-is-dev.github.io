@@ -1,0 +1,63 @@
+footer {
+  background: url(../images/bg-footer.jpg) center/cover;
+  height: 270px;
+  .footer-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    color: $grey;
+    padding: 50px 250px;
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 170px;
+      h2 {
+        font-weight: 400;
+        font-size: 2.7rem;
+      }
+      p {
+        width: 90%;
+        line-height: 30px;
+        font-size: 0.9rem;
+      }
+    }
+    .footer-right {
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      label {
+        display: block;
+        text-transform: uppercase;
+        color: $white;
+        font-weight: bold;
+        font-size: 0.85rem;
+      }
+      input {
+        background: none;
+        border: 1px solid rgb(65, 65, 65);
+        width: 250px;
+        height: 30px;
+        margin-top: -30px;
+      }
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 60%;
+        h6 {
+          text-transform: uppercase;
+          color: $white;
+          font-weight: bold;
+          font-size: 0.85rem;
+        }
+        i {
+          font-size: 0.8rem;
+          color: rgb(65, 65, 65);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
