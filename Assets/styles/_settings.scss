@@ -34,6 +34,7 @@ $gold: rgb(160, 123, 2);
 
 body {
   margin: 0 auto;
+  // background: $black;
 }
 
 h2 {
@@ -43,8 +44,16 @@ h2 {
   font-size: 2rem;
 }
 
+// @mixin childCenter
 @mixin flex {
   display: flex;
   justify-content: center;
   text-align: center;
 }
+
+@mixin alignChildren($space) {
+  display: flex;
+  align-items: center;
+  justify-content: $space;
+}
+// @include alignChildren(space-between)

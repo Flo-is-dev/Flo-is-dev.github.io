@@ -37,7 +37,13 @@ header {
 header nav {
   display: grid;
   grid-template-columns: 12% 78% 10%;
-  padding: 20px 200px;
+  padding: 20px 100px;
+}
+@media screen and (max-width: 850px) {
+  header nav {
+    grid-template-columns: 50% 20% 30%;
+    padding: 20px 50px;
+  }
 }
 header nav h2 {
   color: rgb(241, 241, 241);
@@ -54,6 +60,11 @@ header nav li {
   justify-content: center;
   cursor: pointer;
   text-transform: uppercase;
+}
+@media screen and (max-width: 850px) {
+  header nav li {
+    visibility: hidden;
+  }
 }
 header nav i {
   transform: translateY(30%);
@@ -92,6 +103,11 @@ header .header-text p {
   height: 450px;
   background: rgb(241, 241, 241);
 }
+@media screen and (max-width: 850px) {
+  .section1 {
+    grid-template-columns: 1fr;
+  }
+}
 .section1 .intro-left {
   margin: 15px;
   border: 1px dashed rgb(160, 123, 2);
@@ -121,6 +137,11 @@ header .header-text p {
 .section1 .intro-right {
   background: url(../images/store-01.jpg) center/cover;
 }
+@media screen and (max-width: 850px) {
+  .section1 .intro-right {
+    display: none;
+  }
+}
 
 .section2 {
   background: rgb(28, 28, 28);
@@ -133,6 +154,12 @@ header .header-text p {
   margin: 0 auto;
   position: absolute;
   z-index: 10;
+}
+@media screen and (max-width: 1000px) {
+  .section2 .menu {
+    width: 70%;
+    left: 12.5%;
+  }
 }
 .section2 .menu .menu1 {
   height: 200px;
@@ -178,6 +205,13 @@ header .header-text p {
   grid-template-columns: 50% 50%;
   border-top: 6px solid rgb(160, 123, 2);
 }
+@media screen and (max-width: 750px) {
+  .section2 .menu .menu3 {
+    grid-template-columns: 1fr;
+    height: 750px;
+    overflow: hidden;
+  }
+}
 .section2 .menu .menu3 .plat {
   display: grid;
   grid-template-columns: 30% 60% 10%;
@@ -185,9 +219,20 @@ header .header-text p {
   padding-bottom: 30px;
   border-bottom: 1px dashed rgba(128, 128, 128, 0.384);
 }
+@media screen and (max-width: 750px) {
+  .section2 .menu .menu3 .plat {
+    margin: 15px 10px 0 20px;
+    padding-bottom: 10px;
+  }
+}
 .section2 .menu .menu3 .plat img {
   border-radius: 50px;
-  width: 90px;
+  width: 80%;
+}
+@media screen and (max-width: 750px) {
+  .section2 .menu .menu3 .plat img {
+    width: 60%;
+  }
 }
 .section2 .menu .menu3 .plat div {
   display: flex;
@@ -205,6 +250,7 @@ header .header-text p {
   color: rgb(160, 123, 2);
   font-weight: bold;
   font-size: 1.1rem;
+  transform: translateX(-10px);
 }
 .section2 .bg {
   position: absolute;
@@ -218,13 +264,29 @@ header .header-text p {
   background: rgb(28, 28, 28);
   height: 650px;
 }
+@media screen and (max-width: 1050px) {
+  .section3 {
+    height: 1000px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .section3 {
+    height: 1100px;
+  }
+}
 .section3 .form-content {
   width: 70%;
   height: 500px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 35% 65%;
   background: black;
+}
+@media screen and (max-width: 1050px) {
+  .section3 .form-content {
+    grid-template-columns: 1fr;
+    height: 550px;
+  }
 }
 .section3 .form-content .time {
   color: rgb(241, 241, 241);
@@ -235,6 +297,11 @@ header .header-text p {
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+}
+@media screen and (max-width: 1050px) {
+  .section3 .form-content .time {
+    height: 500px;
+  }
 }
 .section3 .form-content .time img {
   width: 30px;
@@ -282,6 +349,11 @@ header .header-text p {
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
 }
+@media screen and (max-width: 1050px) {
+  .section3 .form-content .booking h3 {
+    margin-top: 0px;
+  }
+}
 .section3 .form-content .booking img {
   width: 25px;
   margin: 0 auto;
@@ -289,7 +361,18 @@ header .header-text p {
 .section3 .form-content .booking form {
   height: 120px;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media screen and (max-width: 1050px) {
+  .section3 .form-content .booking form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 550px) {
+  .section3 .form-content .booking form {
+    grid-template-columns: 1fr;
+    height: 200px;
+  }
 }
 .section3 .form-content .booking form input,
 .section3 .form-content .booking form select {
@@ -299,6 +382,7 @@ header .header-text p {
   border: none;
   border-bottom: 1px solid gray;
   transform: translateX(10%);
+  outline: none;
 }
 .section3 .form-content .booking div input {
   background: rgb(28, 28, 28);
@@ -310,6 +394,10 @@ header .header-text p {
   text-transform: uppercase;
   letter-spacing: 3px;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+.section3 .form-content .booking div input:hover {
+  transform: translateX(3px);
 }
 
 .section4 {
@@ -320,6 +408,11 @@ header .header-text p {
   margin: 0 auto;
   display: grid;
   grid-template-rows: 30% 70%;
+}
+@media screen and (max-width: 1050px) {
+  .section4 .event-container {
+    width: 85%;
+  }
 }
 .section4 .event-container .event-top {
   color: rgb(241, 241, 241);
@@ -350,6 +443,11 @@ header .header-text p {
   grid-template-columns: 60% 40%;
   width: 100%;
   height: 380px;
+}
+@media screen and (max-width: 750px) {
+  .section4 .event-container .event-bot {
+    grid-template-columns: 1fr;
+  }
 }
 .section4 .event-container .event-bot .event-bot-l {
   display: grid;
@@ -451,6 +549,11 @@ header .header-text p {
   text-align: center;
   position: relative;
 }
+@media screen and (max-width: 750px) {
+  .section4 .event-container .event-bot .event-bot-r {
+    display: none;
+  }
+}
 .section4 .event-container .event-bot .event-bot-r-text {
   position: absolute;
   background: rgb(241, 241, 241);
@@ -518,6 +621,12 @@ header .header-text p {
   text-align: center;
   line-height: 30px;
 }
+@media screen and (max-width: 850px) {
+  .section5-top {
+    width: 80%;
+    padding: 50px;
+  }
+}
 .section5-top i {
   font-size: 1rem;
 }
@@ -529,6 +638,12 @@ header .header-text p {
   color: rgb(160, 123, 2);
   font-size: 1rem;
   font-weight: 400;
+}
+@media screen and (max-width: 600px) {
+  .section5-top p {
+    margin-top: 20px;
+    font-size: 0.8rem;
+  }
 }
 .section5-img {
   background: url(../images/gmap.jpg) center;
@@ -555,6 +670,16 @@ footer .footer-container {
   color: rgb(241, 241, 241);
   padding: 50px 250px;
 }
+@media screen and (max-width: 1050px) {
+  footer .footer-container {
+    padding: 50px 150px;
+  }
+}
+@media screen and (max-width: 850px) {
+  footer .footer-container {
+    padding: 50px 50px;
+  }
+}
 footer .footer-container .footer-left {
   display: flex;
   flex-direction: column;
@@ -570,11 +695,22 @@ footer .footer-container .footer-left p {
   line-height: 30px;
   font-size: 0.9rem;
 }
+@media screen and (max-width: 700px) {
+  footer .footer-container .footer-left p {
+    font-size: 0.7rem;
+    line-height: 20px;
+  }
+}
 footer .footer-container .footer-right {
   padding-left: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+@media screen and (max-width: 500px) {
+  footer .footer-container .footer-right {
+    padding-left: 20px;
+  }
 }
 footer .footer-container .footer-right label {
   display: block;
@@ -583,6 +719,11 @@ footer .footer-container .footer-right label {
   font-weight: bold;
   font-size: 0.85rem;
 }
+@media screen and (max-width: 450px) {
+  footer .footer-container .footer-right label {
+    font-size: 0.7rem;
+  }
+}
 footer .footer-container .footer-right input {
   background: none;
   border: 1px solid rgb(65, 65, 65);
@@ -590,17 +731,32 @@ footer .footer-container .footer-right input {
   height: 30px;
   margin-top: -30px;
 }
+@media screen and (max-width: 650px) {
+  footer .footer-container .footer-right input {
+    width: 150px;
+  }
+}
 footer .footer-container .footer-right div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 60%;
 }
+@media screen and (max-width: 650px) {
+  footer .footer-container .footer-right div {
+    width: 100%;
+  }
+}
 footer .footer-container .footer-right div h6 {
   text-transform: uppercase;
   color: rgb(241, 241, 241);
   font-weight: bold;
   font-size: 0.85rem;
+}
+@media screen and (max-width: 450px) {
+  footer .footer-container .footer-right div h6 {
+    font-size: 0.7rem;
+  }
 }
 footer .footer-container .footer-right div i {
   font-size: 0.8rem;
