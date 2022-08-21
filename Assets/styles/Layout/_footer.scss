@@ -53,12 +53,9 @@ footer {
       input {
         background: none;
         border: 1px solid rgb(65, 65, 65);
-        width: 250px;
+        width: 80%;
         height: 30px;
         margin-top: -30px;
-        @media screen and (max-width: 650px) {
-          width: 150px;
-        }
       }
       div {
         display: flex;
