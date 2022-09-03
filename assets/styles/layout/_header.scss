@@ -6,6 +6,14 @@ header {
 .links {
   display: flex;
   justify-content: space-between;
+  & i {
+    scale: 2;
+    transition: 2s ease;
+    &:hover {
+      transform: rotateX(720deg);
+      color: goldenrod;
+    }
+  }
 }
 #h1-wrapper {
   transition-delay: 0.3s;

@@ -1,10 +1,19 @@
 footer {
   margin: 150px 0 120px;
-}
-footer p {
-  font-size: calc(1rem + 2vw);
-  margin: 25px 0;
-  text-align: center;
+
+  & p {
+    font-size: calc(1rem + 2vw);
+    margin: 25px 0;
+    text-align: center;
+    & i {
+      color: #000101;
+      transition: 2s ease;
+      &:hover {
+        transform: rotateX(720deg);
+        color: goldenrod;
+      }
+    }
+  }
 }
 #l2 {
   transition-delay: 1.2s;

@@ -88,6 +88,19 @@ a::after {
   bottom: -4px;
   left: 0;
   transform-origin: left;
+  z-index: 10 !important;
+}
+
+#testgit::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.0823529412);
+  bottom: -4px;
+  left: 0;
+  transform-origin: left;
+  z-index: 100 !important;
 }
 
 a:hover {
@@ -156,6 +169,14 @@ header {
 .links {
   display: flex;
   justify-content: space-between;
+}
+.links i {
+  scale: 2;
+  transition: 2s ease;
+}
+.links i:hover {
+  transform: rotateX(720deg);
+  color: goldenrod;
 }
 
 #h1-wrapper {
@@ -317,11 +338,18 @@ header h2 {
 footer {
   margin: 150px 0 120px;
 }
-
 footer p {
   font-size: calc(1rem + 2vw);
   margin: 25px 0;
   text-align: center;
+}
+footer p i {
+  color: #000101;
+  transition: 2s ease;
+}
+footer p i:hover {
+  transform: rotateX(720deg);
+  color: goldenrod;
 }
 
 #l2 {
