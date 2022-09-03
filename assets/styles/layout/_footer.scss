@@ -1,0 +1,23 @@
+footer {
+  margin: 150px 0 120px;
+}
+footer p {
+  font-size: calc(1rem + 2vw);
+  margin: 25px 0;
+  text-align: center;
+}
+#l2 {
+  transition-delay: 1.2s;
+}
+#l3 {
+  transition-delay: 1.6s;
+}
+footer a {
+  font-family: "font-bold", serif;
+  color: #000101;
+  font-size: calc(1rem + 2vw);
+}
+
+.img2 {
+  background: url(../img/f-gironde.jpg) center/cover;
+}

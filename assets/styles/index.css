@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* paramètres généraux */
 @font-face {
   font-family: font-reg;
@@ -7,18 +8,25 @@
   font-family: font-bold;
   src: url(../fonts/PlayfairDisplay-ExtraBold.ttf);
 }
-
 * {
   padding: 0;
   margin: 0;
 }
+
+*::-moz-selection {
+  background: #000101;
+  color: #fefeff;
+}
+
 *::selection {
   background: #000101;
   color: #fefeff;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "font-reg", serif;
   background: #000101;
@@ -29,6 +37,7 @@ body {
 .wrapper {
   perspective: 900px;
 }
+
 .appear {
   opacity: 0;
   transform: translateY(100%) rotateX(-80deg);
@@ -36,11 +45,13 @@ body {
   transform-style: preserve-3d;
   transition: 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .appear.is-inview {
   transition-delay: 1s;
   opacity: 1;
   transform: none;
 }
+
 h2 {
   font-size: calc(3rem + 5vw);
   text-align: center;
@@ -48,13 +59,16 @@ h2 {
   font-family: "font-bold", serif;
   letter-spacing: 3px;
 }
+
 .title {
   font-size: calc(1.5rem + 5vw);
   letter-spacing: 0;
 }
+
 span {
   display: inline-block;
 }
+
 a,
 a:visited {
   cursor: pointer;
@@ -64,6 +78,7 @@ a:visited {
   transition: 0.1s linear;
   font-size: calc(0.8rem + 0.8vw);
 }
+
 a::after {
   content: "";
   position: absolute;
@@ -74,14 +89,18 @@ a::after {
   left: 0;
   transform-origin: left;
 }
+
 a:hover {
   transform: scale(1.04);
   color: rgb(217, 217, 217);
 }
+
 a:hover::after {
-  animation: animLink 1.4s infinite ease-in-out;
+  -webkit-animation: animLink 1.4s infinite ease-in-out;
+          animation: animLink 1.4s infinite ease-in-out;
 }
-@keyframes animLink {
+
+@-webkit-keyframes animLink {
   50% {
     transform: scaleX(0.2);
   }
@@ -90,6 +109,14 @@ a:hover::after {
   }
 }
 
+@keyframes animLink {
+  50% {
+    transform: scaleX(0.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
 .img {
   height: 395px;
   width: 100vw;
@@ -98,9 +125,11 @@ a:hover::after {
   filter: grayscale(100%);
   transition: 1.6s;
 }
+
 .img:hover {
   filter: grayscale(10%);
 }
+
 .line {
   height: 2px;
   width: 70%;
@@ -112,27 +141,29 @@ a:hover::after {
   opacity: 0;
   transform: scaleX(0);
 }
+
 .line-wrapper.is-inview .line {
   opacity: 1;
   transform: scaleX(1);
 }
-/* ***************************************** */
-/* paramètres par odres d'apparitions */
-/* ******************************************** */
+
 header {
   height: 100vh;
   position: relative;
   margin: 2vw 2vw 0;
 }
+
 .links {
   display: flex;
   justify-content: space-between;
 }
+
 #h1-wrapper {
   transition-delay: 0.3s;
 }
+
 h1 {
-  font-size: calc(2rem + 8vw);
+  font-size: calc(2rem + 6vw);
   margin-top: 70px;
   font-family: "font-bold", serif;
   letter-spacing: 6px;
@@ -140,16 +171,19 @@ h1 {
 }
 
 header h2 {
-  font-size: calc(1rem + 6.5vw);
+  font-size: calc(1rem + 4.5vw);
   margin: 18px 0;
   text-align: left;
 }
+
 #h2-1 {
   transition-delay: 0.9s;
 }
+
 #h2-2 {
   transition-delay: 1.2s;
 }
+
 .scroll-wrapper {
   position: absolute;
   left: 50%;
@@ -164,12 +198,14 @@ header h2 {
 }
 
 .img1 {
-  background: url(../img/bill-gates-1.jpg);
+  background: url(../img/florent-gironde.jpeg) top/cover;
 }
+
 .h2-wrapper {
   mix-blend-mode: exclusion;
   margin: -220px 0 200px;
 }
+
 .about p {
   width: 70%;
   min-width: 280px;
@@ -179,9 +215,11 @@ header h2 {
   font-size: calc(1rem + 1vw);
   letter-spacing: 1px;
 }
+
 .skills {
   margin: 200px 0 250px;
 }
+
 .skills h2 {
   margin-bottom: 150px;
 }
@@ -194,8 +232,9 @@ header h2 {
   text-align: center;
   transition-delay: 0.6s;
 }
+
 .skills p {
-  font-size: calc(1rem + 6vw);
+  font-size: calc(1rem + 4vw);
   font-family: "font-bold", serif;
   letter-spacing: 4px;
   background: #000101;
@@ -203,6 +242,7 @@ header h2 {
   display: inline-block;
   padding: 0 12px 12px;
 }
+
 .portfolio {
   margin: 200px 0;
 }
@@ -217,6 +257,7 @@ header h2 {
   max-width: 600px;
   margin: 50px 5vw;
 }
+
 .project::before {
   content: "";
   position: absolute;
@@ -227,26 +268,33 @@ header h2 {
   transition: width 1s ease-out;
   transition-delay: 0.85s;
 }
+
 .project.is-inview::before {
   width: 0;
 }
+
 #p2 {
   margin: 0 6vw 0 auto;
 }
+
 #p3 {
   margin-left: 8vw;
 }
+
 .project img {
   transition: 0.4s ease-out;
   width: 100%;
 }
+
 .project:hover img {
   filter: brightness(20%);
 }
+
 .project:hover .projects-infos {
   opacity: 1;
   transform: translate(0, -50%);
 }
+
 .projects-infos {
   position: absolute;
   top: 50%;
@@ -259,25 +307,31 @@ header h2 {
 .projects-infos a {
   font-size: calc(1rem + 3vw);
 }
+
 .projects-infos p {
   font-size: 2rem;
   margin-top: 1.5vw;
   color: #fefeff;
 }
+
 footer {
   margin: 150px 0 120px;
 }
+
 footer p {
   font-size: calc(1rem + 2vw);
   margin: 25px 0;
   text-align: center;
 }
+
 #l2 {
   transition-delay: 1.2s;
 }
+
 #l3 {
   transition-delay: 1.6s;
 }
+
 footer a {
   font-family: "font-bold", serif;
   color: #000101;
@@ -285,5 +339,5 @@ footer a {
 }
 
 .img2 {
-  background: url(../img/bill-gates-2.jpg) center/cover;
-}
+  background: url(../img/f-gironde.jpg) center/cover;
+}/*# sourceMappingURL=index.css.map */

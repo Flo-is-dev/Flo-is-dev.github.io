@@ -1,0 +1,39 @@
+header {
+  height: 100vh;
+  position: relative;
+  margin: 2vw 2vw 0;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+#h1-wrapper {
+  transition-delay: 0.3s;
+}
+h1 {
+  font-size: calc(2rem + 6vw);
+  margin-top: 70px;
+  font-family: "font-bold", serif;
+  letter-spacing: 6px;
+  color: #fefeff;
+}
+
+header h2 {
+  font-size: calc(1rem + 4.5vw);
+  margin: 18px 0;
+  text-align: left;
+}
+#h2-1 {
+  transition-delay: 0.9s;
+}
+#h2-2 {
+  transition-delay: 1.2s;
+}
+.scroll-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20%;
+  color: rgb(217, 217, 217);
+  font-size: calc(0.8rem + 0.5vw);
+}

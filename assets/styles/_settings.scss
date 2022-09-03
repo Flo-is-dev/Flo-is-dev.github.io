@@ -1,0 +1,118 @@
+/* paramètres généraux */
+@font-face {
+  font-family: font-reg;
+  src: url(../fonts/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: font-bold;
+  src: url(../fonts/PlayfairDisplay-ExtraBold.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+*::selection {
+  background: #000101;
+  color: #fefeff;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "font-reg", serif;
+  background: #000101;
+  color: #fefeff;
+  transition: 0.7s ease-in-out;
+}
+
+.wrapper {
+  perspective: 900px;
+}
+.appear {
+  opacity: 0;
+  transform: translateY(100%) rotateX(-80deg);
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.appear.is-inview {
+  transition-delay: 1s;
+  opacity: 1;
+  transform: none;
+}
+h2 {
+  font-size: calc(3rem + 5vw);
+  text-align: center;
+  color: rgb(217, 217, 217);
+  font-family: "font-bold", serif;
+  letter-spacing: 3px;
+}
+.title {
+  font-size: calc(1.5rem + 5vw);
+  letter-spacing: 0;
+}
+span {
+  display: inline-block;
+}
+a,
+a:visited {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: #fefeff;
+  transition: 0.1s linear;
+  font-size: calc(0.8rem + 0.8vw);
+}
+a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #fefeff;
+  bottom: -4px;
+  left: 0;
+  transform-origin: left;
+}
+a:hover {
+  transform: scale(1.04);
+  color: rgb(217, 217, 217);
+}
+a:hover::after {
+  animation: animLink 1.4s infinite ease-in-out;
+}
+@keyframes animLink {
+  50% {
+    transform: scaleX(0.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.img {
+  height: 395px;
+  width: 100vw;
+  max-width: 395px;
+  margin: 0 auto;
+  filter: grayscale(100%);
+  transition: 1.6s;
+}
+.img:hover {
+  filter: grayscale(10%);
+}
+.line {
+  height: 2px;
+  width: 70%;
+  margin: 0 auto;
+  background: #000101;
+  transition: 1s cubic-bezier(0.77, 0, 0.18, 1);
+  /* transform: left; */
+  transition-delay: 0.45s;
+  opacity: 0;
+  transform: scaleX(0);
+}
+.line-wrapper.is-inview .line {
+  opacity: 1;
+  transform: scaleX(1);
+}
