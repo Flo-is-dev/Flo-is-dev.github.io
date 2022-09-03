@@ -1,9 +1,10 @@
 .about {
-  margin: 400px 0 250px;
+  margin: 400px 0 150px;
 }
 
 .img1 {
   background: url(../img/florent-gironde.jpeg) top/cover;
+  border-radius: 5px;
 }
 .h2-wrapper {
   mix-blend-mode: exclusion;
@@ -14,12 +15,12 @@
   min-width: 280px;
   text-align: center;
   margin: 0 auto;
-  line-height: calc(7px + 4.5vw);
+  line-height: calc(7px + 6.5vw);
   font-size: calc(1rem + 1vw);
   letter-spacing: 1px;
 }
 .skills {
-  margin: 200px 0 250px;
+  margin: 100px 0 150px;
 }
 .skills h2 {
   margin-bottom: 150px;
@@ -41,10 +42,11 @@
   color: #fefeff;
   display: inline-block;
   padding: 0 12px 12px;
+  border-radius: 5px;
 }
 
 .portfolio {
-  margin: 200px 0;
+  margin: 150px 0;
 }
 
 .projects-container {
@@ -79,6 +81,7 @@
 .project img {
   transition: 0.4s ease-out;
   width: 100%;
+  border-radius: 5px;
 }
 .project:hover img {
   filter: brightness(20%);
