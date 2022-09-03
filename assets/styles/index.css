@@ -171,7 +171,7 @@ header {
   justify-content: space-between;
 }
 .links i {
-  scale: 2;
+  scale: 1.5;
   transition: 2s ease;
 }
 .links i:hover {
@@ -213,7 +213,47 @@ header h2 {
   color: rgb(217, 217, 217);
   font-size: calc(0.8rem + 0.5vw);
 }
+.scroll-wrapper span {
+  transform: rotate(90deg);
+  -webkit-animation: flash 1s ease infinite;
+          animation: flash 1s ease infinite;
+}
 
+@-webkit-keyframes flash {
+  0% {
+    color: rgb(95, 95, 95);
+  }
+  25% {
+    color: rgb(154, 154, 154);
+  }
+  50% {
+    color: rgb(201, 201, 201);
+  }
+  75% {
+    color: rgb(154, 154, 154);
+  }
+  100% {
+    color: rgb(95, 95, 95);
+  }
+}
+
+@keyframes flash {
+  0% {
+    color: rgb(95, 95, 95);
+  }
+  25% {
+    color: rgb(154, 154, 154);
+  }
+  50% {
+    color: rgb(201, 201, 201);
+  }
+  75% {
+    color: rgb(154, 154, 154);
+  }
+  100% {
+    color: rgb(95, 95, 95);
+  }
+}
 .about {
   margin: 400px 0 250px;
 }
