@@ -1,5 +1,5 @@
 portp.addEventListener("click", () => {
-  confirm("En travaux 🚧 Repassez plus tard ;)");
+  confirm("🚧 Under construction. Please come back later.");
 });
 
 const scroll = new LocomotiveScroll({
