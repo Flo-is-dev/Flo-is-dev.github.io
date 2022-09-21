@@ -14,6 +14,9 @@ header {
       color: goldenrod;
     }
   }
+  & a:nth-child(3)::after {
+    transform-origin: right;
+  }
 }
 #h1-wrapper {
   transition-delay: 0.3s;
