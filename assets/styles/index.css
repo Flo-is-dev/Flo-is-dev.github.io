@@ -12,15 +12,15 @@
 }
 * .title {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 * .skills {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 *::-moz-selection {
@@ -129,7 +129,7 @@ a:hover {
 
 a:hover::after {
   -webkit-animation: animLink 1.4s infinite ease-in-out;
-          animation: animLink 1.4s infinite ease-in-out;
+  animation: animLink 1.4s infinite ease-in-out;
 }
 
 @-webkit-keyframes animLink {
@@ -238,7 +238,7 @@ header h2 {
 .scroll-wrapper span {
   transform: rotate(90deg);
   -webkit-animation: flash 1s ease infinite;
-          animation: flash 1s ease infinite;
+  animation: flash 1s ease infinite;
 }
 
 @-webkit-keyframes flash {
@@ -434,4 +434,4 @@ footer a {
 .img2 {
   background: url(../img/f-gironde.jpg) center/cover;
   border-radius: 5px;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */
