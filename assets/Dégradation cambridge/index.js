@@ -1,3 +1,7 @@
+/**
+ * explications
+ */
+
 function shufflePhrase(phrase) {
   let words = phrase.split(" "); // Sépare la phrase en mots
   let shuffledWords = [];
