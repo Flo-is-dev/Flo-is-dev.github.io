@@ -132,18 +132,7 @@ header .header-text {
   justify-content: center;
   height: 100%;
   margin-top: -150px;
-  -webkit-animation: anim 1.5s ease;
-          animation: anim 1.5s ease;
-}
-@-webkit-keyframes anim {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+  animation: anim 1.5s ease;
 }
 @keyframes anim {
   0% {

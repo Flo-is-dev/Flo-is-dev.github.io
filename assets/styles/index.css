@@ -12,15 +12,13 @@
 }
 * .title {
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 * .skills {
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 *::-moz-selection {
@@ -79,6 +77,14 @@ h2 {
   letter-spacing: 3px;
 }
 
+#alternance {
+  font-size: 3.5rem;
+  color: black;
+  background: rgb(223, 221, 59);
+  border-radius: 20px;
+  padding: 15px;
+}
+
 .title {
   font-size: calc(1.5rem + 5vw);
   letter-spacing: 0;
@@ -128,17 +134,7 @@ a:hover {
 }
 
 a:hover::after {
-  -webkit-animation: animLink 1.4s infinite ease-in-out;
   animation: animLink 1.4s infinite ease-in-out;
-}
-
-@-webkit-keyframes animLink {
-  50% {
-    transform: scaleX(0.2);
-  }
-  100% {
-    transform: scaleX(1);
-  }
 }
 
 @keyframes animLink {
@@ -180,7 +176,7 @@ a:hover::after {
 }
 
 header {
-  height: 100vh;
+  height: 90vh;
   position: relative;
   margin: 2vw 2vw 0;
 }
@@ -237,26 +233,7 @@ header h2 {
 }
 .scroll-wrapper span {
   transform: rotate(90deg);
-  -webkit-animation: flash 1s ease infinite;
   animation: flash 1s ease infinite;
-}
-
-@-webkit-keyframes flash {
-  0% {
-    color: rgb(95, 95, 95);
-  }
-  25% {
-    color: rgb(154, 154, 154);
-  }
-  50% {
-    color: rgb(201, 201, 201);
-  }
-  75% {
-    color: rgb(154, 154, 154);
-  }
-  100% {
-    color: rgb(95, 95, 95);
-  }
 }
 
 @keyframes flash {
@@ -434,4 +411,4 @@ footer a {
 .img2 {
   background: url(../img/f-gironde.jpg) center/cover;
   border-radius: 5px;
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
