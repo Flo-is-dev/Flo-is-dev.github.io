@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #007aff;
-  --secondary-color: #479efa;
+  --primary-color: #b813aaa3;
+  --secondary-color: #db34cdc9;
   --background-color: #5856d6;
   --text-color: rgb(233, 233, 233);
 }
@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 body {
@@ -114,6 +115,7 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.152);
   border-radius: 5px;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+  user-select: text;
 }
 
 html {
