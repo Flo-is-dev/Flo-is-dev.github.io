@@ -1,0 +1,132 @@
+.section3 {
+  height: 700px;
+  width: 100%;
+  padding: 100px 150px;
+
+  & .title {
+    @include center-flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 50px;
+
+    & p {
+      padding: 0 20vw;
+      text-align: center;
+    }
+  }
+
+  & .offer {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 300px;
+    gap: 30px;
+    width: 95%;
+
+    & .offer1 {
+      background: $gray1;
+      border-radius: 15px;
+      position: relative;
+
+      & .pub1 {
+        position: absolute;
+        width: 60%;
+        height: 130px;
+        left: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-around;
+        padding: 0 25px;
+
+        & .pub-text1 h3 {
+          text-align: end;
+          & span {
+            font-size: 1.6rem;
+          }
+        }
+      }
+
+      & .car-model {
+        padding-top: 50px;
+      }
+
+      & .car-model img {
+        object-fit: fill;
+        width: 100%;
+      }
+    }
+
+    & .offer2 {
+      background: $green2;
+      border-radius: 15px;
+      position: relative;
+
+      & .pub2 {
+        position: absolute;
+        width: 50%;
+        height: 130px;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-around;
+        padding: 0 25px;
+
+        & .pub-text2 h3 {
+          text-align: end;
+          font-size: 2rem;
+          & span {
+            font-size: 1.6rem;
+          }
+        }
+      }
+
+      & .car-model {
+        padding-top: 50px;
+      }
+
+      & .car-model img {
+        object-fit: fill;
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .section3 {
+    height: 100%;
+    padding: 50px;
+    & .title {
+      flex-direction: row;
+
+      & p {
+        padding: 0;
+        font-size: 0.8rem;
+        text-align: justify;
+      }
+      & h2 {
+        font-size: 2rem;
+      }
+    }
+    & .offer {
+      height: 200px;
+      display: block;
+      & .offer1 {
+        display: none;
+      }
+      & .pub2 {
+        width: 70% !important;
+        left: 30% !important;
+        height: 50% !important;
+      }
+      & h3 {
+        font-size: 1rem !important;
+      }
+
+      & #button2 {
+        font-size: 0.7rem !important;
+      }
+    }
+  }
+}

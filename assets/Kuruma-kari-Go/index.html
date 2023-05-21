@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>車借りGO (Kuruma-kari GO) - CarRentGO</title>
+  <link rel="stylesheet" href="./assets/styles/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="./index.js" defer></script>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo"><img src="./assets/img/Car-Rent-Go-black.png" alt="Logo Car Rent Go"></div>
+    <ul class="menu">
+      <li>Home</li>
+      <li>About Us</li>
+      <li>Cars</li>
+      <li>Futures</li>
+      <li>Help</li>
+    </ul>
+    <div id="contact">Contact Us</div>
+  </nav>
+
+
+
+  <header>
+    <div class="header-left">
+      <div class="header-title">
+        <h1>Rent the best SUVs</h1>
+      </div>
+
+      <!-- Donne le prix en fonction de la durée demandée -->
+      <div class="card">
+        <div class="card-mode">
+          <a href="#">Distance</a>
+          <a href="#">Hourly</a>
+          <a href="#">Flat Rate</a>
+        </div>
+
+        <h3><span id="nightPrice">46</span> € /day</h3>
+        <form action="" class="form-adresse">
+          <input type="text" placeholder="Pick Up Address">
+        </form>
+
+
+        <div class="start">
+          <label for="">Start</label>
+          <input id="start_date" type="date" required />
+        </div>
+
+        <div class="end">
+          <label for="">End</label>
+          <input id="end_date" type="date" required />
+        </div>
+
+
+
+        <h3 id="total-card">Total : <span id="total"></span> €</h3>
+        <button id="button">Reserve Now</button>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-right-circle1">
+        <div class="header-right-circle2"></div>
+      </div>
+
+      <div class="header-right-img"><img src="./assets/img/front-model-removebg-preview (1).png" alt=""></div>
+      <div class="header-right-card">
+        <p><span class="number">+ 120</span></br> cars <span class="arrow"><i
+              class="fa-solid fa-arrow-right fa-2xs"></i></span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Section logo -->
+  <div>
+    <section class="brand">
+      <div class="brand-card">
+        <a href="#"><img src="./assets/img/hyundai-removebg-preview.png" alt="Logo hyundai"></a>
+        <a href="#"><img src="./assets/img/BMW-Logo.png" alt="Logo BMW"></a>
+        <a href="#"><img src="./assets/img/Lexus-Logo-1989-removebg-preview.png" alt="logo lexus"></a>
+        <a href="#"><img
+            src="./assets/img/le-nouveau-logo-peugeot-un-changement-radical-ressemblant-fortement-au-logo-de-1960-removebg-preview.png"
+            alt="logo peugeot"></a>
+        <a href="#"><img src="./assets/img/Logo-Kia-1526254-removebg-preview.png" alt="logo kia"></a>
+        <a href="#"><img src="./assets/img/logo-Genesis.png" alt="logo genesis"></a></div>
+
+    </section>
+    <section class="brand-mobile">
+      <div class="brand-card">
+        <a href="#"><img src="./assets/img/hyundai-removebg-preview.png" alt="Logo hyundai"></a>
+        <a href="#"><img src="./assets/img/BMW-Logo.png" alt="Logo BMW"></a>
+        <a href="#"><img src="./assets/img/Lexus-Logo-1989-removebg-preview.png" alt="logo lexus"></a>
+      </div>
+
+    </section>
+  </div>
+
+
+  <section class="div-carousel">
+    <div class="div-carousel-card">
+      <div class="div-carousel-card-left">
+        <h2>Our fleet SUVs</h2>
+      </div>
+      <div class="div-carousel-card-right">
+        <p>Our vehicule fleet is designed to provide customers with a wide range of
+          options to choose from, with a focus on comfort, performance, and reliability</p>
+      </div>
+    </div>
+
+    <div class="carousel">
+
+      <!-- car 1 -->
+      <div class="carousel-card" id="car1">
+
+        <div class="carousel-model">
+          <h3>BMW X1</h3>
+          <div class="arrow"> <i class="fa-solid fa-arrow-right fa-2xs"></i></div>
+        </div>
+
+        <div class="model-img"><img src="./assets/img/bmw-x1.png" alt="Image BMW x1">
+        </div>
+
+        <div class="carousel-info">
+          <div class="info-perso"><i class="fa-solid fa-user"></i>
+            <p>5</p>
+          </div>
+          <div class="info-AT"><i class="fa-solid fa-gears"></i>
+            <p>Manual</p>
+          </div>
+          <div class="info-price"><span>$180</span>/d</div>
+        </div>
+
+      </div>
+
+      <!-- car 2 -->
+      <div class="carousel-card" id="car2">
+        <div class="carousel-model">
+          <h3>Hyundai Kona</h3>
+          <div class="arrow"><i class="fa-solid fa-arrow-right fa-2xs"></i></div>
+        </div>
+        <div class="model-img"><img src="./assets/img/hyundai-kona.png" alt="Hyundai kona"></div>
+        <div class="carousel-info">
+          <div class="info-perso"><i class="fa-solid fa-user"></i>
+            <p>5</p>
+          </div>
+          <div class="info-AT"><i class="fa-solid fa-gears"></i>
+            <p>Manual</p>
+          </div>
+          <div class="info-price"><span>$180</span>/d</div>
+        </div>
+      </div>
+
+      <!-- car 3 -->
+      <div class="carousel-card">
+        <div class="carousel-model">
+          <h3>Skoda Kodiaq</h3>
+          <div class="arrow"> <i class="fa-solid fa-arrow-right fa-2xs"></i></div>
+        </div>
+        <div class="model-img"><img src="./assets/img/skoda-kodiaq.png" alt="Skoda Kodiaq"></div>
+        <div class="carousel-info">
+          <div class="info-perso"><i class="fa-solid fa-user"></i>
+            <p>5</p>
+          </div>
+          <div class="info-AT"><i class="fa-solid fa-gears"></i>
+            <p>Manual</p>
+          </div>
+          <div class="info-price"><span>$180</span>/d</div>
+        </div>
+      </div>
+
+      <!-- car 4 -->
+      <div class="carousel-card">
+        <div class="carousel-model">
+          <h3>Tesla model Y</h3>
+          <div class="arrow"> <i class="fa-solid fa-arrow-right fa-2xs"></i></div>
+        </div>
+        <div class="model-img"><img src="./assets/img/tesla-y.png" alt="Tesla model Y"></div>
+        <div class="carousel-info">
+          <div class="info-perso"><i class="fa-solid fa-user"></i>
+            <p>5</p>
+          </div>
+          <div class="info-AT"><i class="fa-solid fa-gears"></i>
+            <p>Manual</p>
+          </div>
+          <div class="info-price"><span>$180</span>/d</div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="carousel-button">
+      <div id="button">Open All Models</div>
+    </div>
+
+
+  </section>
+
+  <!-- Section 3 -->
+  <section class="section3">
+
+    <div class="title">
+      <h2>Exclusive Offer</h2>
+      <p>Our vehicule fleet is designed to provide customers with a wide range of
+        options to choose from, with a focus on comfort, performance, and reliability</p>
+    </div>
+
+    <div class="offer">
+
+      <div class="offer1">
+        <!-- Image et couleur en background -->
+        <div class="pub1">
+          <div class="pub-text1">
+            <h3>Mersedes benz GLE for <span>$150</span>/day</h3>
+          </div>
+
+          <div class="carousel-button">
+            <div id="button">OpenPage</div>
+          </div>
+        </div>
+        <div class="car-model"><img src="./assets/img/car-profil-removebg-preview (1).png" alt="voiture de profile">
+        </div>
+      </div>
+
+      <div class="offer2">
+        <!-- Image et couleur en background -->
+        <div class="pub2">
+          <div class="pub-text2">
+            <h3>New Models KIA +5 types</h3>
+          </div>
+
+          <div class="carousel-button">
+            <div id="button2">Explore More</div>
+          </div>
+        </div>
+        <div class="car-model"><img src="./assets/img/kia-3quart-removebg-preview.png" alt="suv kia"></div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="contact-card">
+    <div class="contact-card-title">
+      <h2>Questions? Get in Touch</h2>
+    </div>
+    <div class="contact-card-contact">
+
+      <form action="">
+        <div class="form-name">
+          <!-- <label for="name">Name</label> -->
+          <input type="text" id="name" placeholder="Name">
+          <!-- <label for="email">Email</label> -->
+          <input type="text" id="email" placeholder="Email">
+        </div>
+        <!-- <label for="subject">Subject</label> -->
+        <input type="text" id="subject" placeholder="Subject">
+        <!-- <label for="message">message</label> -->
+        <textarea id="message" placeholder="How can we help you?"></textarea>
+        <div class="submit-container">
+          <input type="submit" class="btn" value="Send Message">
+        </div>
+      </form>
+
+
+      <div class="info">
+        <div class="info-adresse">
+          <h3>Address</h3>
+          <p>33 rue Amédé cousin, Paris 75017</p>
+        </div>
+        <div class="info-phon">
+          <h3>Phone</h3>
+          <p>+33 1 23 45 56 78</p>
+        </div>
+        <div class="info-hours">
+          <h3>Hours</h3>
+          <p>Mon-Fri: 8am - 5pm (CST)</p>
+        </div>
+        <div class="info-logo">
+          <div class="facebook">
+            <i class="fa-brands fa-facebook"></i>
+            Facebook
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+
+    <div class="footer1">
+      <div class="footer1-logo">
+        <img src="./assets/img/Car-Rent-Go-white.png" alt="">
+        <p>Rent high-quality SUVs, for your best vacation or road trip.</p>
+      </div>
+      <div class="footer-menu1">
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Login</li>
+          <li>SUVs</li>
+          <li>Insurance</li>
+          <li>Payment</li>
+        </ul>
+      </div>
+
+      <div class="footer-menu2">
+
+        <h4>Menu</h4>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Cars</li>
+          <li>Features</li>
+          <li>Help</li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Subscribe to the</br> newsletter</h3>
+        <input type="mail" placeholder="Email ...">
+        <a href="#"><i class="fa-solid fa-arrow-right fa-2xs"></i></a>
+
+      </div>
+    </div>
+
+
+    <div class="footer2">
+      <div class="footer2-info">
+        <p>© 2023 Car Rent Go</p>
+
+      </div>
+      <div class="menu3">
+        <ul>
+          <li>Terms</li>
+          <li>Privacy Policy</li>
+          <li>Legal notice</li>
+          <li>Accessibility</li>
+        </ul>
+      </div>
+
+      <div class="icons">
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

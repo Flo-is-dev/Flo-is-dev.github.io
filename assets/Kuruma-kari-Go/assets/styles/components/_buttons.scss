@@ -1,0 +1,33 @@
+#button {
+  background: $green3;
+  display: inline;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+
+  & :hover {
+    background: $green2;
+  }
+}
+
+#button2 {
+  background: white;
+  display: inline;
+  color: black;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn {
+  background: $gray2;
+  display: inline;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
