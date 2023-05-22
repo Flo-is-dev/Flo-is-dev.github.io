@@ -12,7 +12,7 @@ nav {
   display: grid;
   grid-template-columns: 10% auto 130px;
   align-content: center;
-  z-index: 100;
+  z-index: 10;
   & .logo {
     display: flex;
     justify-content: left;
@@ -47,6 +47,11 @@ nav {
     font-weight: 600;
     cursor: pointer;
     letter-spacing: 1px;
+    transition: 0.15s ease-out;
+  }
+  & #contact:hover {
+    background: #24dfc6;
+    transition: 0.15s ease-out;
   }
 }
 
@@ -64,14 +69,10 @@ nav {
 
 @media screen and (max-width: 550px) {
   nav {
-    grid-template-columns: auto 1px 1px !important;
+    // grid-template-columns: 150px 1 auto !important;
 
     & .logo {
-      justify-content: center;
-    }
-
-    & #contact {
-      display: none !important;
+      justify-content: left;
     }
   }
 }

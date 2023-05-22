@@ -40,6 +40,9 @@ footer {
         color: $gray1;
         cursor: pointer;
       }
+      & li:hover {
+        color: $green2;
+      }
     }
 
     & .footer-contact {
@@ -55,11 +58,9 @@ footer {
 
       & input[type="mail"] {
         border-radius: 10px;
-
-        & ::placeholder {
-          padding-left: 50px;
-          background: red;
-        }
+      }
+      & input[type="mail"]::placeholder {
+        padding-left: 15px;
       }
 
       & a {
@@ -97,6 +98,9 @@ footer {
       align-items: center;
       justify-content: space-around;
       cursor: pointer;
+      & li:hover {
+        color: $green2;
+      }
     }
 
     & .icons {
@@ -106,6 +110,11 @@ footer {
       & i {
         transform: scale(1.5);
         cursor: pointer;
+        transition: 0.1s ease-out;
+      }
+      & i:hover {
+        transform: scale(1.6);
+        transition: 0.1s ease-out;
       }
     }
   }

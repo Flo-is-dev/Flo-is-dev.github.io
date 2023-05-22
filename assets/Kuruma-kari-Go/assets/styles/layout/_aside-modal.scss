@@ -1,0 +1,168 @@
+// .modal-btn {
+// }
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  visibility: hidden;
+  transition: visibility 0.4s;
+
+  & .overlay {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333333d3;
+
+    transition: opacity 0.4s 0.2s ease-out;
+  }
+
+  & .modal {
+    opacity: 0;
+    width: 100%;
+    max-width: 450px;
+    min-width: 300px;
+    padding: 30px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 50px));
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+
+    & h1 {
+      color: rgb(118, 116, 116);
+    }
+
+    & .close-modal {
+      padding: 6px 8px 4px;
+      border: none;
+      font-size: 18px;
+      border-radius: 5px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      background: red;
+      color: white;
+    }
+  }
+}
+
+.modal-container.active {
+  visibility: visible;
+  // 0 sec pour que l'animation d'apparation soit visible,pour le retour on met en revanche 0.4s
+  transition: visibility 0s;
+
+  & .overlay {
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
+  }
+
+  & .modal {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: 0.2s ease-out, transform 0.4s ease-out;
+  }
+}
+
+.inscription {
+  background: white;
+  display: grid;
+  grid-template-rows: 10% repeat(4, 84px) 15%;
+  // padding: 50px 45px 30px;
+  border-radius: 15px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+
+  & div {
+    transition: 0.2s;
+  }
+  & label {
+    letter-spacing: 1px;
+  }
+  & input[type="text"],
+  & input[type="password"] {
+    margin: 7px 0 7px;
+    border: 1px solid transparent;
+    background: $gray1;
+    height: 36px;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+    font-size: 1.1rem;
+    padding-left: 10px;
+    transition: 0.2s;
+  }
+  & input[type="text"]:focus,
+  & input[type="password"]:focus {
+    border: 1px solid $green2;
+  }
+  & span {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 0.8rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    color: red;
+  }
+  & p {
+    background: red;
+    width: 33%;
+    height: 6px;
+    margin: -2px 0 2px;
+    border-radius: 50px;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  & #security span {
+    display: inline;
+  }
+  & input[type="submit"] {
+    border: none;
+    color: white;
+    background: $green3;
+    width: 40%;
+    margin: 6px auto;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s ease;
+    letter-spacing: 1px;
+    font-family: $font1 sans-serif;
+  }
+  & input[type="submit"]:hover {
+    background: $green2;
+    transform: translateX(2px);
+  }
+  & .error input {
+    color: red;
+    border: 1px solid rgba(255, 0, 0, 0.527);
+  }
+  & .error span {
+    visibility: visible;
+    opacity: 1;
+    color: red;
+  }
+  & .progressRed {
+    background: red;
+    width: 33%;
+    visibility: visible;
+  }
+  & .progressBlue {
+    background: #16d9e7;
+    width: 67%;
+    visibility: visible;
+  }
+  & .progressGreen {
+    width: 100%;
+    background: $green2;
+    visibility: visible;
+  }
+}
