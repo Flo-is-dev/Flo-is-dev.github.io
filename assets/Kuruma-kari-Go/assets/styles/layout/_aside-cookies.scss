@@ -1,0 +1,144 @@
+.aside-cookies {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  visibility: visible;
+  background: rgba(78, 78, 78, 0.726);
+
+  & .cookies {
+    background: rgb(251, 251, 251);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-rows: 15% 65% 20%;
+    border-radius: 15px;
+    width: 60vw;
+    max-width: 700px;
+    padding: 10px;
+    opacity: 1;
+  }
+
+  & .cookie-consent-modal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    & h3 {
+      font-size: 1.4rem;
+    }
+  }
+
+  & .cookies-text {
+    color: #3b3b3b;
+    text-align: left;
+    background-image: url(../../img/cookie.svg);
+    background-repeat: space;
+    background-size: auto;
+    background-position: 10%;
+
+    & ul {
+      list-style: inside;
+      padding: 10px 0 10px 10px;
+    }
+  }
+
+  & .cookies-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    position: relative;
+  }
+  & .cookies-btn::after {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    content: "";
+    height: 2px;
+    width: 102%;
+    background: rgb(240, 238, 238);
+  }
+
+  & .cookies-text {
+    padding: 0 20px;
+    line-height: 28px;
+    padding-top: 20px;
+    position: relative;
+  }
+  & .cookies-text::after {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%);
+    content: "";
+    height: 2px;
+    width: 102%;
+    background: rgb(240, 238, 238);
+  }
+
+  & .btn-a {
+    background: #0b6270;
+    color: white;
+
+    border-radius: 5px;
+    border: none;
+    padding: 10px 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.1s ease-out;
+  }
+  & .btn-a:hover {
+    background: $green2;
+    transition: 0.1s ease-out;
+  }
+
+  & .btn-b,
+  .btn-c {
+    background: white;
+    border: 1px solid $gray1;
+    border-radius: 5px;
+    color: #0b6270;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.1s ease-out;
+  }
+  & .btn-c:hover,
+  .btn-b:hover {
+    background: $gray1;
+    transition: 0.1s ease-out;
+  }
+  & .btn-info {
+    height: 10vh;
+    width: 50vh;
+    border-radius: 20px;
+    bottom: 5%;
+    left: 46%;
+    transform: translate(-50%);
+    position: absolute;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: gray;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cookies {
+    width: 90% !important;
+    grid-template-rows: 15% 65% 10% !important;
+  }
+  p,
+  ul {
+    font-size: 0.9rem;
+  }
+}

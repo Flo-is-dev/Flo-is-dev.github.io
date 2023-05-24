@@ -1,5 +1,56 @@
 // **********************
 // **********************
+// Banière cookies
+// ***************************
+// **********************
+
+const btnA = document.querySelector(".btn-a");
+const btnB = document.querySelector(".btn-b");
+const btnC = document.querySelector(".btn-c");
+const cook = document.querySelector(".cookies");
+
+const asideCookie = document.querySelector(".aside-cookies");
+const info = document.querySelector(".btn-info");
+let valeurCle = localStorage.getItem("banniere");
+
+const check = () => {
+  if (valeurCle) {
+    console.log("stockage existe");
+    cook.remove();
+    document.body.style.overflow = "auto";
+    asideCookie.style.visibility = "hidden";
+    // document.body.style.background = "none";
+  } else {
+    console.log("stockage non existant");
+  }
+};
+
+check();
+
+btnA.addEventListener("click", () => {
+  cook.style.opacity = 0;
+  info.style.opacity = 0;
+  asideCookie.style.visibility = "hidden";
+  localStorage.setItem("banniere", "oui");
+  document.body.style.overflow = "auto";
+});
+
+btnC.addEventListener("click", () => {
+  console.log("ca clickk C");
+  cook.style.opacity = 0;
+  info.style.opacity = 0;
+  asideCookie.style.visibility = "hidden";
+  localStorage.setItem("banniere", "oui");
+  document.body.style.overflow = "auto";
+});
+
+btnB.addEventListener("click", () => {
+  info.style.opacity = 1;
+  foot.classList.toggle("btn-info");
+});
+
+// **********************
+// **********************
 // Barre modal
 // ***************************
 // **********************
@@ -10,6 +61,7 @@ const modalTriggers = document.querySelectorAll(".modal-trigger");
 modalTriggers.forEach((trigger) =>
   trigger.addEventListener("click", () => {
     toggleModal();
+    // document.body.style.overflow = "hidden";
   })
 );
 
@@ -213,9 +265,10 @@ form.addEventListener("submit", (e) => {
     password = null;
     confirmPass = null;
     alert("Inscription validée (fictivement)");
-  } else {
-    alert(
-      "Veuillez remplir correctement les champs pour valider l'inscription (fictivement)"
-    );
   }
+  // else {
+  //   alert(
+  //     "Veuillez remplir correctement les champs pour valider l'inscription (fictivement)"
+  //   );
+  // }
 });
