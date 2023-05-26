@@ -51,6 +51,25 @@ btnB.addEventListener("click", () => {
 
 // **********************
 // **********************
+// Nav barre event
+// ***************************
+// **********************
+
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  console.log(window.scrollY);
+
+  if (scrollY > 200) {
+    nav.style.position = "fixed";
+    nav.style.border = "1px solid #f0f0f0";
+  } else {
+    nav.style.position = "absolute";
+  }
+});
+
+// **********************
+// **********************
 // Barre modal
 // ***************************
 // **********************
