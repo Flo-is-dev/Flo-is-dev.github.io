@@ -28,11 +28,13 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 0 20vw;
-    & :first-child {
-      font-weight: 600;
-    }
+
     & li {
       cursor: pointer;
+    }
+    & li:hover {
+      color: $green2;
+      font-weight: 600;
     }
   }
   & #contact {

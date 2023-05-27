@@ -15,13 +15,13 @@ let valeurCle = localStorage.getItem("banniere");
 
 const check = () => {
   if (valeurCle) {
-    console.log("stockage existe");
+    console.log("cookie deja existant");
     cook.remove();
     document.body.style.overflow = "auto";
     asideCookie.style.visibility = "hidden";
     // document.body.style.background = "none";
   } else {
-    console.log("stockage non existant");
+    console.log("cookie non existant");
   }
 };
 
@@ -58,7 +58,7 @@ btnB.addEventListener("click", () => {
 const nav = document.querySelector("nav");
 
 window.addEventListener("scroll", () => {
-  console.log(window.scrollY);
+  // console.log(window.scrollY);
 
   if (scrollY > 200) {
     nav.style.position = "fixed";
@@ -291,3 +291,26 @@ form.addEventListener("submit", (e) => {
   //   );
   // }
 });
+
+// ******************
+// ******************
+// Hover du carousel
+// ******************
+// ******************
+
+// const layoutOver = document.querySelectorAll(".layout-over");
+// const carouselCard = document.querySelectorAll(".carousel-card");
+
+// layoutOver.forEach((item) => {
+//   item.addEventListener("mouseover", (e) => {
+//     carouselCard.forEach((card) => {
+//       card.style.background = "#24dfc6";
+//     });
+//   });
+
+//   item.addEventListener("mouseout", (e) => {
+//     carouselCard.forEach((card) => {
+//       card.style.background = "#f0f0f0";
+//     });
+//   });
+// });

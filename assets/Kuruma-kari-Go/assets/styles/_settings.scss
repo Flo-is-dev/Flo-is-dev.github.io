@@ -41,6 +41,11 @@ $Gradiant: linear-gradient(225deg, #24dfc6 0%, #dbebeb 100%);
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: #0b6270;
+  color: white;
+}
+
 body {
   font-family: $font1;
   overflow-y: hidden;
