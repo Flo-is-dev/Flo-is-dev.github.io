@@ -246,7 +246,7 @@ header {
   height: 110%;
   display: grid;
   grid-template-columns: 2fr 3fr;
-  padding: 110px 50px 100px 150px;
+  padding: 110px 50px 50px 150px;
 }
 header .header-left {
   width: 80%;
@@ -331,6 +331,45 @@ header .header-left .card .end label {
 header .header-left h1 {
   font-size: 3.5rem;
   font-weight: bold;
+}
+header .header-left .assurance {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+header .header-left .assurance img {
+  width: 30px;
+}
+header .header-left .app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+header .header-left .app .app-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+header .header-left .app .app-div .app-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 120px;
+}
+header .header-left .app .app-div .app-score .app-stars {
+  font-weight: 600;
+}
+header .header-left .app .app-div .app-score p {
+  font-size: 0.9rem;
+}
+header .header-left .app img {
+  width: 120px;
 }
 header .header-right {
   position: relative;
@@ -423,6 +462,11 @@ header .header-right .header-right-card .arrow:hover {
   }
   header .header-right {
     display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .app {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 400px) {

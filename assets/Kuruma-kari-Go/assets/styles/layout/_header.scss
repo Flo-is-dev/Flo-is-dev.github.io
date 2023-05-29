@@ -3,7 +3,7 @@ header {
   height: 110%;
   display: grid;
   grid-template-columns: 2fr 3fr;
-  padding: 110px 50px 100px 150px;
+  padding: 110px 50px 50px 150px;
 
   & .header-left {
     width: 80%;
@@ -96,6 +96,51 @@ header {
     & h1 {
       font-size: 3.5rem;
       font-weight: bold;
+    }
+
+    & .assurance {
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+      & img {
+        width: 30px;
+      }
+    }
+
+    & .app {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      & .app-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        & .app-score {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 120px;
+
+          & .app-stars {
+            font-weight: 600;
+          }
+          & p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      & img {
+        width: 120px;
+      }
     }
   }
 
@@ -216,6 +261,11 @@ header {
     & .header-right {
       display: none;
     }
+  }
+}
+@media screen and (max-width: 600px) {
+  .app {
+    flex-direction: column;
   }
 }
 
