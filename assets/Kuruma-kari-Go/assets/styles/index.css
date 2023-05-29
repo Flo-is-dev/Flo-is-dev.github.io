@@ -355,6 +355,9 @@ header .header-left .app .app-div {
   align-items: center;
   gap: 10px;
 }
+header .header-left .app .app-div img {
+  width: 120px;
+}
 header .header-left .app .app-div .app-score {
   display: flex;
   justify-content: center;
@@ -367,9 +370,6 @@ header .header-left .app .app-div .app-score .app-stars {
 }
 header .header-left .app .app-div .app-score p {
   font-size: 0.9rem;
-}
-header .header-left .app img {
-  width: 120px;
 }
 header .header-right {
   position: relative;

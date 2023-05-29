@@ -121,6 +121,9 @@ header {
         justify-content: center;
         align-items: center;
         gap: 10px;
+        & img {
+          width: 120px;
+        }
 
         & .app-score {
           display: flex;
@@ -136,10 +139,6 @@ header {
             font-size: 0.9rem;
           }
         }
-      }
-
-      & img {
-        width: 120px;
       }
     }
   }
