@@ -100,6 +100,9 @@ nav .logo {
 nav img {
   width: 150px;
 }
+nav .logo-mobile {
+  display: none;
+}
 nav .menu {
   display: flex;
   flex-direction: row;
@@ -228,11 +231,14 @@ nav .toggle-btn:hover span:nth-child(3) {
   }
 }
 @media screen and (max-width: 450px) {
-  nav {
-    grid-template-columns: auto 80px;
-  }
-  nav #contact {
+  nav .logo {
     display: none;
+  }
+  nav .logo-mobile {
+    display: block;
+  }
+  nav .logo-mobile img {
+    width: 40px;
   }
 }
 header {

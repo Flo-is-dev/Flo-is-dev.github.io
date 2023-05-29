@@ -22,6 +22,9 @@ nav {
   & img {
     width: 150px;
   }
+  & .logo-mobile {
+    display: none;
+  }
   & .menu {
     display: flex;
     flex-direction: row;
@@ -102,7 +105,7 @@ nav {
   height: 110%;
   background: $green2;
   top: 0;
-  // -250px
+
   left: -110%;
   transition: 0.5s ease-out;
   z-index: 15;
@@ -143,13 +146,12 @@ nav {
 
 @media screen and (max-width: 1050px) {
   nav {
-    // width: 60vw;
     grid-template-columns: auto 80px 130px;
 
     & .menu {
       display: none;
     }
-    // display: none;
+
     & .toggle-btn {
       display: grid;
       align-items: end;
@@ -159,8 +161,6 @@ nav {
 
 @media screen and (max-width: 550px) {
   nav {
-    // grid-template-columns: 150px 1 auto !important;
-
     & .logo {
       justify-content: left;
     }
@@ -169,10 +169,14 @@ nav {
 
 @media screen and (max-width: 450px) {
   nav {
-    grid-template-columns: auto 80px;
-
-    & #contact {
+    & .logo {
       display: none;
+    }
+    & .logo-mobile {
+      display: block;
+      & img {
+        width: 40px;
+      }
     }
   }
 }
