@@ -70,6 +70,24 @@ window.addEventListener("scroll", () => {
 
 // **********************
 // **********************
+// nav bar mobile
+// ***************************
+// **********************
+
+const sidebar = document.getElementById("side-bar");
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+  console.log("ca click");
+});
+
+sidebar.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+
+// **********************
+// **********************
 // Barre modal
 // ***************************
 // **********************

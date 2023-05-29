@@ -9,12 +9,12 @@
 }
 
 ::-moz-selection {
-  background-color: #0b6270;
+  background-color: #48abba;
   color: white;
 }
 
 ::selection {
-  background-color: #0b6270;
+  background-color: #48abba;
   color: white;
 }
 
@@ -83,6 +83,9 @@ nav {
   border-radius: 15px;
   width: 95%;
   height: 60px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   display: grid;
   grid-template-columns: 10% auto 130px;
   align-content: center;
@@ -129,18 +132,107 @@ nav #contact:hover {
   background: #24dfc6;
   transition: 0.15s ease-out;
 }
+nav .toggle-btn {
+  cursor: pointer;
+  height: 35px;
+  width: 40px;
+  display: none;
+  position: relative;
+}
+nav .toggle-btn span {
+  width: 100%;
+  height: 4px;
+  border-radius: 20px;
+  background: #282828;
+  display: block;
+  margin-top: 4px;
+  transition: 0.15s ease;
+}
+nav .toggle-btn ::after {
+  content: "";
+  background: #282828;
+  height: 35px;
+  width: 1px;
+  position: absolute;
+  left: 150%;
+  top: 10%;
+}
+nav .toggle-btn:hover span {
+  background: #24dfc6;
+}
+nav .toggle-btn:hover span:nth-child(2) {
+  width: 75%;
+}
+nav .toggle-btn:hover span:nth-child(3) {
+  width: 45%;
+}
+
+#side-bar {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  background: #24dfc6;
+  top: 0;
+  left: -110%;
+  transition: 0.5s ease-out;
+  z-index: 15;
+}
+#side-bar .close-modal {
+  padding: 6px 10px 4px;
+  border: none;
+  font-size: 25px;
+  border-radius: 5px;
+  position: absolute;
+  top: 3%;
+  right: 15%;
+  cursor: pointer;
+  background: #282828;
+  color: white;
+  z-index: 16;
+}
+#side-bar li {
+  color: #282828;
+  list-style: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding-left: 25px;
+  padding-top: 25px;
+  transition: 0.15 ease-out;
+}
+#side-bar li:hover {
+  background: #282828;
+  color: #fcfcfb;
+  font-weight: 600;
+  transition: 0.15 ease-out;
+}
+
+#side-bar.active {
+  left: 0;
+}
 
 @media screen and (max-width: 1050px) {
   nav {
-    grid-template-columns: auto 130px;
+    grid-template-columns: auto 80px 130px;
   }
   nav .menu {
     display: none;
+  }
+  nav .toggle-btn {
+    display: grid;
+    align-items: end;
   }
 }
 @media screen and (max-width: 550px) {
   nav .logo {
     justify-content: left;
+  }
+}
+@media screen and (max-width: 450px) {
+  nav {
+    grid-template-columns: auto 80px;
+  }
+  nav #contact {
+    display: none;
   }
 }
 header {
