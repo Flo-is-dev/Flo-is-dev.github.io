@@ -10,14 +10,14 @@ header {
 
     & .card {
       background: white;
-      height: 400px;
+      height: 420px;
       width: 90%;
       min-width: 379px;
       max-width: 400px;
       margin: 0 auto;
       border-radius: 20px;
       display: grid;
-      grid-template-rows: 1fr 8% 10% 10% 10% 10% 10% 13%;
+      grid-template-rows: 10% 8% 12% 12% 10% 10% 10% 1fr;
       gap: 10px;
       padding: 15px 35px;
       margin-top: 30px;
@@ -101,7 +101,7 @@ header {
     }
 
     & h1 {
-      font-size: 3.5rem;
+      font-size: 3.3rem;
       font-weight: bold;
     }
 
