@@ -1,5 +1,16 @@
 // **********************
 // **********************
+// Loader
+// ***************************
+// **********************
+const loader = document.querySelector(".loader");
+
+window.addEventListener("load", () => {
+  loader.classList.add("load-out");
+});
+
+// **********************
+// **********************
 // Banière cookies
 // ***************************
 // **********************
@@ -15,13 +26,13 @@ let valeurCle = localStorage.getItem("banniere");
 
 const check = () => {
   if (valeurCle) {
-    console.log("cookie deja existant");
+    // console.log("cookie deja existant");
     cook.remove();
     document.body.style.overflow = "auto";
     asideCookie.style.visibility = "hidden";
     // document.body.style.background = "none";
   } else {
-    console.log("cookie non existant");
+    // console.log("cookie non existant");
   }
 };
 
@@ -106,8 +117,10 @@ const toggleModal = () => {
   modalContainer.classList.toggle("active");
 };
 
+// *****************************
 // ************************
 // Card de reservation/prix
+// *****************************
 // *****************************
 
 // Convert today date into input format
@@ -164,6 +177,12 @@ start_date.addEventListener("change", bookingCalc);
 end_date.addEventListener("change", bookingCalc);
 
 bookingCalc();
+
+const cardButton = document.querySelector(".card-button");
+
+cardButton.addEventListener("click", () => {
+  confirm("Votre reservation a bien été prise en compte 🌎 😊 🚗");
+});
 
 // **********************
 // **********************
@@ -232,7 +251,7 @@ const passwordChecker = (value) => {
     // console.log("test");
     errorDisplay(
       "password",
-      "Minimum de 8 caractères, une majuscule, un chiffre et un caractère spécial"
+      "Min 8 caractères, une majuscule, un chiffre et un spécial"
     );
     progressBar.classList.add("progressRed");
     password = null;
@@ -301,7 +320,7 @@ form.addEventListener("submit", (e) => {
     email = null;
     password = null;
     confirmPass = null;
-    alert("Inscription validée (fictivement)");
+    alert("Inscription validée (Site de démo)");
   }
   // else {
   //   alert(
@@ -332,3 +351,18 @@ form.addEventListener("submit", (e) => {
 //     });
 //   });
 // });
+
+// ******************
+// ******************
+// Evenement de la checkbox
+// ******************
+// ******************
+
+const checkboxAdresse = document.getElementById("checkbox-adresse");
+const checkboxDiv = document.querySelector(".checkbox-div");
+const adresseRetour = document.getElementById("adresse-retour");
+
+checkboxAdresse.addEventListener("change", () => {
+  checkboxDiv.style.display = "none";
+  adresseRetour.style.display = "block";
+});

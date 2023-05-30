@@ -260,7 +260,7 @@ header .header-left .card {
   margin: 0 auto;
   border-radius: 20px;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 8% 10% 10% 10% 10% 10% 13%;
   gap: 10px;
   padding: 15px 35px;
   margin-top: 30px;
@@ -304,6 +304,12 @@ header .header-left .card .form-adresse input[type=text] {
 header .header-left .card .form-adresse input[type=text] :focus {
   border: 1px solid #24dfc6;
 }
+header .header-left .card .checkbox-div input {
+  cursor: pointer;
+}
+header .header-left .card #adresse-retour {
+  display: none;
+}
 header .header-left .card input[type=date] {
   border-radius: 8px;
   width: auto;
@@ -338,7 +344,7 @@ header .header-left .assurance {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 20px 0;
+  margin: 12px 0 20px 0;
 }
 header .header-left .assurance img {
   width: 30px;
@@ -407,7 +413,7 @@ header .header-right .header-right-card {
   top: 0%;
   left: 65%;
   height: 150px;
-  width: 18vw;
+  width: 210px;
   border-radius: 25px;
   background: #0b6270;
   opacity: 0.7;
@@ -1055,18 +1061,23 @@ footer .footer2 .icons i:hover {
 .modal-container .modal {
   opacity: 0;
   width: 100%;
+  height: 600px;
+  display: grid;
+  grid-template-rows: 13% 1fr 1fr 1fr 1fr 12%;
   max-width: 450px;
   min-width: 300px;
   padding: 30px;
   background: rgb(255, 255, 255);
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, calc(-50% - 50px));
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
-.modal-container .modal h1 {
-  color: rgb(118, 116, 116);
+.modal-container .modal h2 {
+  color: #282828;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
 }
 .modal-container .modal .close-modal {
   padding: 6px 8px 4px;
@@ -1079,6 +1090,18 @@ footer .footer2 .icons i:hover {
   cursor: pointer;
   background: red;
   color: white;
+}
+.modal-container .pseudo-container {
+  position: relative;
+}
+.modal-container .pseudo-container::after {
+  content: "";
+  height: 1px;
+  width: 60%;
+  background: rgb(207, 207, 207);
+  position: absolute;
+  top: -25%;
+  left: 0;
 }
 
 .modal-container.active {
@@ -1318,5 +1341,75 @@ footer .footer2 .icons i:hover {
   p,
   ul {
     font-size: 0.9rem;
+  }
+}
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #282828;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.loader .letter {
+  color: #484848;
+  font-size: 80px;
+  margin-bottom: 100px;
+  letter-spacing: 15px;
+  animation: flash 1.2s linear infinite;
+}
+.loader .letter:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.loader .letter:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loader .letter:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.loader .letter:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.loader .letter:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.loader .letter:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.loader .letter:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.loader .letter:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.loader .letter:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.loader .letter:nth-child(10) {
+  animation-delay: 1s;
+}
+
+.load-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  z-index: -10 !important;
+}
+
+@keyframes flash {
+  0% {
+    color: #24dfc6;
+    text-shadow: 0 0 7px #24dfc6;
+    text-shadow: 0 0 12px #24dfc6;
+    text-shadow: 0 0 18px #24dfc6;
+  }
+  90% {
+    color: #484848;
+    text-shadow: none;
+  }
+  100% {
+    color: #24dfc6;
+    text-shadow: 0 0 7px #24dfc6;
   }
 }/*# sourceMappingURL=index.css.map */

@@ -16,6 +16,19 @@
 
 <body>
 
+  <div class="loader">
+    <span class="letter">C</span>
+    <span class="letter">H</span>
+    <span class="letter">A</span>
+    <span class="letter">R</span>
+    <span class="letter">G</span>
+    <span class="letter">E</span>
+    <span class="letter">M</span>
+    <span class="letter">E</span>
+    <span class="letter">N</span>
+    <span class="letter">T</span>
+  </div>
+
   <!-- Bannière cookies -->
 
   <aside class="aside-cookies">
@@ -26,17 +39,17 @@
     <div class="cookies">
 
       <div class="cookie-consent-modal">
-        <h3>Getaround utilise des cookies 🍪</h3>
+        <h3>Car Rent GO utilise des cookies 🍪</h3>
         <button class="btn-c">Continuer sans accepter</button>
       </div>
 
       <div class="cookies-text">
-        <p>Getaround utilise des cookies pour les finalités suivantes :</p>
+        <p>Car Rent GO utilise des cookies pour les finalités suivantes :</p>
         <ul>
           <li>Permettre la navigation sur le site et l’utilisation efficace de nos services. </li>
           <li>Analyser l’audience de notre site.</li>
           <li>Améliorer l'efficacité de notre site en mesurant notre performance.</li>
-          <li>Mesurer et améliorer nos publicités Getaround.</li>
+          <li>Mesurer et améliorer nos publicités Car Rent GO .</li>
         </ul>
         <p> Certains de ces cookies sont posés par nos partenaires.
         </p>
@@ -62,7 +75,7 @@
 
       <button class="close-modal modal-trigger" aria-label="close modal"><i class="fa-solid fa-xmark"></i></button>
 
-      <h1 id="modalTitle">Formulaire d'inscription</h1>
+      <h2 id="modalTitle">Formulaire d'inscription</h2>
 
       <div class="pseudo-container">
 
@@ -118,6 +131,8 @@
 
   </nav>
 
+  <!-- Menu mobile -->
+
   <div id="side-bar">
     <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
     <ul>
@@ -151,6 +166,17 @@
 
         </form>
 
+        <div class="checkbox-div">
+          <input type="checkbox" id="checkbox-adresse">
+          <label for="scales">L'adresse de retour est-elle différente?</label>
+        </div>
+
+        <form action="" class="form-adresse" id="adresse-retour">
+
+          <input type="text" placeholder="Adresse de retour ">
+
+        </form>
+
         <div class="start">
           <label for="">Départ</label>
           <input id="start_date" type="date" required />
@@ -162,7 +188,7 @@
         </div>
 
         <h3 id="total-card">Total : <span id="total"></span> €</h3>
-        <button id="button">Reserver Maintenant</button>
+        <button id="button" class="card-button">Reserver Maintenant</button>
       </div>
 
       <div class="assurance">
@@ -398,7 +424,7 @@
           <!-- <label for="name">Name</label> -->
           <input type="text" id="name" placeholder="Nom">
           <!-- <label for="email">Email</label> -->
-          <input type="text" id="email" placeholder="Email">
+          <input type="text" id="e-mail" placeholder="Email">
         </div>
         <!-- <label for="subject">Subject</label> -->
         <input type="text" id="subject" placeholder="Objet">
