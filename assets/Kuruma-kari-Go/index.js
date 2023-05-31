@@ -366,3 +366,19 @@ checkboxAdresse.addEventListener("change", () => {
   checkboxDiv.style.display = "none";
   adresseRetour.style.display = "block";
 });
+
+// ******************
+// ******************
+// Evenement FAQ footer
+// ******************
+// ******************
+const questions = document.querySelectorAll(".question");
+
+questions.forEach((item) => {
+  item.addEventListener("click", () => {
+    const next = item.nextElementSibling;
+    next.classList.toggle("visible");
+    icone = item.lastElementChild;
+    icone.classList.toggle("fa-chevron-up");
+  });
+});
