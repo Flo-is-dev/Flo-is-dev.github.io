@@ -121,17 +121,28 @@ footer {
 
 .footer {
   display: none;
+
   .container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
+    & .logo-footer-mobile {
+      justify-content: center;
+      padding: 10px 0;
+      display: flex;
+      & img {
+        width: 40%;
+      }
+    }
+    & .legal-info p {
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+    }
   }
 
-  .banniere-titre {
-    margin-bottom: 1rem;
-  }
   .accordeon {
     width: 85%;
     background-color: $gray2;
@@ -143,6 +154,7 @@ footer {
     top: 15%;
     left: 50%;
     transform: translate(-50%);
+    margin-bottom: 50px;
   }
   .question {
     display: flex;
@@ -215,7 +227,7 @@ footer {
       display: none;
     }
     .footer {
-      display: block;
+      display: grid !important;
     }
   }
 }

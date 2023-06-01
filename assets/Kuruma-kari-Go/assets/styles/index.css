@@ -608,8 +608,18 @@ footer .footer2 .icons i:hover {
   align-items: center;
   position: relative;
 }
-.footer .banniere-titre {
-  margin-bottom: 1rem;
+.footer .container .logo-footer-mobile {
+  justify-content: center;
+  padding: 10px 0;
+  display: flex;
+}
+.footer .container .logo-footer-mobile img {
+  width: 40%;
+}
+.footer .container .legal-info p {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
 }
 .footer .accordeon {
   width: 85%;
@@ -622,6 +632,7 @@ footer .footer2 .icons i:hover {
   top: 15%;
   left: 50%;
   transform: translate(-50%);
+  margin-bottom: 50px;
 }
 .footer .question {
   display: flex;
@@ -693,7 +704,7 @@ footer .footer2 .icons i:hover {
     display: none;
   }
   .footer {
-    display: block;
+    display: grid !important;
   }
 }
 .brand,
