@@ -1,0 +1,10 @@
+9bc689b07d438c6cc1dd5b95e347e142
+https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&api_key=9bc689b07d438c6cc1dd5b95e347e142
+
+HTTP sur mobile:
+aller sur le lien : chrome://inspect/#devices
+entrer dans l'URL de l'émulateur : http://localhost:5500
+
+service worker
+affiche automatiquement la bannière "add to home screen"
+https://developers.google.com/web/fundamentals/app-install-banners/native
