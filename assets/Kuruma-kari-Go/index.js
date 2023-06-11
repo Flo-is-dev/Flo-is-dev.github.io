@@ -62,20 +62,77 @@ btnB.addEventListener("click", () => {
 
 // **********************
 // **********************
-// Nav barre event
+// Nav barre event + GSAp anim on window.load
 // ***************************
 // **********************
 
 const nav = document.querySelector("nav");
+const button = document.getElementById("button");
+const headerH1 = document.getElementById("header-h1");
+const card = document.querySelector(".card");
+const circle = document.querySelector(".header-right-circle1");
+const headerImg = document.querySelector(".header-right-img");
+const headerRightCard = document.querySelector(".header-right-card");
+const brandCard = document.querySelector(".brand-card");
+const header = document.querySelector("header");
+
+const TL = gsap.timeline({ paused: true, stagger: 0.1 });
+
+TL.from(nav, {
+  y: -150,
+  duration: 0.8,
+  ease: "back.out(1.5)",
+});
+
+window.addEventListener("load", () => {
+  TL.play();
+
+  gsap.from(headerH1, {
+    x: -50,
+    opacity: 0,
+    duration: 1,
+    delay: 0.5,
+    ease: "back.out(1.2)",
+  });
+  gsap.from(card, {
+    x: -50,
+    opacity: 0,
+    duration: 1,
+    delay: 0.6,
+    ease: "back.out(1.2)",
+  });
+  gsap.from(circle, {
+    y: 40,
+    scale: 0.8,
+    opacity: 0,
+    duration: 3,
+    delay: 0.7,
+    ease: "back.out(1.2)",
+  });
+  gsap.from(headerImg, {
+    opacity: 0,
+    duration: 1,
+    delay: 0.8,
+    ease: "back.out(1.1)",
+  });
+  gsap.from(headerRightCard, {
+    opacity: 0,
+    duration: 1,
+    delay: 0.9,
+    ease: "back.out(1.2)",
+  });
+});
 
 window.addEventListener("scroll", () => {
   // console.log(window.scrollY);
 
-  if (scrollY > 200) {
+  if (window.scrollY > 400 || window.scrollY < 10) {
     nav.style.position = "fixed";
     nav.style.border = "1px solid #f0f0f0";
+    TL.play();
   } else {
     nav.style.position = "absolute";
+    TL.reverse();
   }
 });
 
@@ -382,3 +439,9 @@ questions.forEach((item) => {
     icone.classList.toggle("fa-chevron-up");
   });
 });
+
+// ******************
+// ******************
+// GSAP animation
+// ******************
+// ******************
