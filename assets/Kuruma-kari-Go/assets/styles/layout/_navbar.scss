@@ -32,12 +32,17 @@ nav {
     justify-content: space-between;
     padding: 0 20vw;
 
-    & li {
+    & a {
       cursor: pointer;
+      user-select: none;
+      text-decoration: none;
     }
-    & li:hover {
+    & a:hover {
       color: $green2;
       font-weight: 600;
+    }
+    & a:link {
+      color: $gray3;
     }
   }
   & #contact {

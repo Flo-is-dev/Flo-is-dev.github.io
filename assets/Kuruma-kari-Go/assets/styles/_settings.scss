@@ -46,6 +46,10 @@ $Gradiant: linear-gradient(225deg, #24dfc6 0%, #dbebeb 100%);
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $font1;
   overflow-y: hidden;

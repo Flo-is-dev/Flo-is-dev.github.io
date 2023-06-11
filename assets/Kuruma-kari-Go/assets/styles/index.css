@@ -18,6 +18,10 @@
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "font1", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   overflow-y: hidden;
@@ -110,12 +114,19 @@ nav .menu {
   justify-content: space-between;
   padding: 0 20vw;
 }
-nav .menu li {
+nav .menu a {
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-decoration: none;
 }
-nav .menu li:hover {
+nav .menu a:hover {
   color: #24dfc6;
   font-weight: 600;
+}
+nav .menu a:link {
+  color: #181818;
 }
 nav #contact {
   background: #181818;
