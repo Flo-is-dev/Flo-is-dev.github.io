@@ -15,7 +15,6 @@
   <meta property="og:image" content="./assets/img/KurumaKariGO.jpg" />
   <meta name="keywords" content="location-de-voiture, véhicule-propre, voiture-pro">
   <meta name="robots" content="index, follow">
-  <meta http-equiv="refresh" content="120">
   <link rel="stylesheet" href="./assets/styles/index.css">
   <link rel="icon" type="image/x-icon" href="./assets/img/Car-rent-go-fav.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -51,7 +50,7 @@
 
       <div class="cookie-consent-modal">
         <h3>Car Rent GO utilise des cookies 🍪</h3>
-        <button class="btn-c">Continuer sans accepter</button>
+        <button class="btn-c" aria-label="bouton-cookies">Continuer sans accepter</button>
       </div>
 
       <div class="cookies-text">
@@ -67,8 +66,8 @@
       </div>
 
       <div class="cookies-btn">
-        <button class="btn-a">Accepter les coockies</button>
-        <button class="btn-b">Paramètres</button>
+        <button class="btn-a" aria-label="accepter-les-cookies">Accepter les coockies</button>
+        <button class="btn-b" aria-label="bouton-voir-parametre-cookies">Paramètres</button>
       </div>
 
     </div>
@@ -84,7 +83,7 @@
 
     <form action="" class="modal inscription">
 
-      <button class="close-modal modal-trigger" aria-label="close modal"><i class="fa-solid fa-xmark"></i></button>
+      <button class="close-modal modal-trigger" aria-label="close-modal"><i class="fa-solid fa-xmark"></i></button>
 
       <h2 id="modalTitle">Formulaire d'inscription</h2>
 
@@ -114,22 +113,24 @@
         <span></span>
       </div>
 
-      <input type="submit" value="Valider">
+      <input type="submit" value="Valider" aria-label="validation-inscription">
 
     </form>
 
   </aside>
 
   <nav>
-    <div class="logo"><a href="#"><img src="./assets/img/Car-Rent-Go-black.png" alt="Logo Car Rent Go"></a></div>
-    <div class="logo-mobile"><a href="#"><img src="./assets/img/Car-rent-go-fav.png" alt="Logo Car Rent Go mobile"></a>
+    <div class="logo"><a href="#" aria-label="logo car rent go"><img src="./assets/img/Car-Rent-Go-black.png"
+          alt="Logo Car Rent Go"></a></div>
+    <div class="logo-mobile"><a href="#" aria-label="logo car rent go mobile"><img
+          src="./assets/img/Car-rent-go-fav.png" alt="Logo Car Rent Go mobile"></a>
     </div>
     <ul class="menu">
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#">A propos</a></li>
-      <li><a href="#div-carousel">Nos Voitures</a></li>
-      <li><a href="#section3">Nos Offres</a></li>
-      <li><a href="#contact-card">Contact</a></li>
+      <li><a href="#" aria-label="accueil">Accueil</a></li>
+      <li><a href="#" aria-label="page à propos">A propos</a></li>
+      <li><a href="#div-carousel" aria-label="nos voitures">Nos Voitures</a></li>
+      <li><a href="#section3" aria-label="nos offres">Nos Offres</a></li>
+      <li><a href="#contact-card" aria-label="contact">Contact</a></li>
     </ul>
     </div>
     <div class="toggle-btn" id="btn">
@@ -144,7 +145,7 @@
   <!-- Menu mobile -->
 
   <div id="side-bar">
-    <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+    <button class="close-modal" aria-label="bouton-de-fermeture"><i class="fa-solid fa-xmark"></i></button>
     <ul>
       <li>Accueil</li>
       <li>A propos</li>
@@ -168,9 +169,9 @@
       <!-- Donne le prix en fonction de la durée demandée -->
       <div class="card">
         <div class="card-mode">
-          <a href="#">Distance</a>
-          <a href="#">Heure</a>
-          <a href="#">Forfait</a>
+          <a href="#" aria-label="distance">Distance</a>
+          <a href="#" aria-label="heure">Heure</a>
+          <a href="#" aria-label="forfait">Forfait</a>
         </div>
 
         <div class="model-choice">
@@ -185,33 +186,33 @@
         </div>
 
         <form action="" class="form-adresse">
-          <input type="text" placeholder="Adresse de retrait ">
+          <input type="text" placeholder="Adresse de retrait " aria-label="entrer-adresse-de-retrait">
 
         </form>
 
         <div class="checkbox-div">
-          <input type="checkbox" id="checkbox-adresse">
+          <input type="checkbox" id="checkbox-adresse" aria-label="si adresse de retour differente">
           <label for="scales">L'adresse de retour est-elle différente?</label>
         </div>
 
         <form action="" class="form-adresse" id="adresse-retour">
 
-          <input type="text" placeholder="Adresse de retour ">
+          <input type="text" placeholder="Adresse de retour " aria-label="entrer-adresse-de-retour">
 
         </form>
 
         <div class="start">
           <label for="">Départ</label>
-          <input id="start_date" type="date" required />
+          <input id="start_date" type="date" aria-label="date de depart" required />
         </div>
 
         <div class="end">
           <label for="">Retour</label>
-          <input id="end_date" type="date" required />
+          <input id="end_date" type="date" aria-label="date de retour" required />
         </div>
 
         <h3 id="total-card">Total : <span id="total"></span> €</h3>
-        <button id="button" class="card-button">Reserver Maintenant</button>
+        <button id="button" class="card-button" aria-label="bouton-de-reservation">Reserver Maintenant</button>
       </div>
 
       <div class="assurance">
@@ -266,21 +267,26 @@
   <div>
     <section class="brand">
       <div class="brand-card">
-        <a href="#"><img src="./assets/img/hyundai-removebg-preview.png" alt="Logo hyundai"></a>
-        <a href="#"><img src="./assets/img/BMW-Logo.png" alt="Logo BMW"></a>
-        <a href="#"><img src="./assets/img/Lexus-Logo-1989-removebg-preview.png" alt="logo lexus"></a>
-        <a href="#"><img
+        <a href="#" aria-label="logo hyundai"><img src="./assets/img/hyundai-removebg-preview.png"
+            alt="Logo hyundai"></a>
+        <a href="#" aria-label="Logo BMW"><img src="./assets/img/BMW-Logo.png" alt="Logo BMW"></a>
+        <a href="#" aria-label="logo lexus"><img src="./assets/img/Lexus-Logo-1989-removebg-preview.png"
+            alt="logo lexus"></a>
+        <a href="#" aria-label="logo peugeot"><img
             src="./assets/img/le-nouveau-logo-peugeot-un-changement-radical-ressemblant-fortement-au-logo-de-1960-removebg-preview.png"
             alt="logo peugeot"></a>
-        <a href="#"><img src="./assets/img/Logo-Kia-1526254-removebg-preview.png" alt="logo kia"></a>
-        <a href="#"><img src="./assets/img/logo-Genesis.png" alt="logo genesis"></a></div>
+        <a href="#" aria-label="logo kia"><img src="./assets/img/Logo-Kia-1526254-removebg-preview.png"
+            alt="logo kia"></a>
+        <a href="#" aria-label="logo genesis"><img src="./assets/img/logo-Genesis.png" alt="logo genesis"></a></div>
 
     </section>
     <section class="brand-mobile">
       <div class="brand-card">
-        <a href="#"><img src="./assets/img/hyundai-removebg-preview.png" alt="Logo hyundai"></a>
-        <a href="#"><img src="./assets/img/BMW-Logo.png" alt="Logo BMW"></a>
-        <a href="#"><img src="./assets/img/Lexus-Logo-1989-removebg-preview.png" alt="logo lexus"></a>
+        <a href="#" aria-label="Logo hyundai"><img src="./assets/img/hyundai-removebg-preview.png"
+            alt="Logo hyundai"></a>
+        <a href="#" aria-label="Logo BMW"><img src="./assets/img/BMW-Logo.png" alt="Logo BMW"></a>
+        <a href="#" aria-label="logo lexus"><img src="./assets/img/Lexus-Logo-1989-removebg-preview.png"
+            alt="logo lexus"></a>
       </div>
 
     </section>
@@ -451,16 +457,16 @@
       <form action="">
         <div class="form-name">
           <!-- <label for="name">Name</label> -->
-          <input type="text" id="name" placeholder="Nom">
+          <input type="text" id="name" placeholder="Nom" aria-label="entrer-nom">
           <!-- <label for="email">Email</label> -->
-          <input type="text" id="e-mail" placeholder="Email">
+          <input type="text" id="e-mail" placeholder="Email" aria-label="entrer-mail">
         </div>
         <!-- <label for="subject">Subject</label> -->
-        <input type="text" id="subject" placeholder="Objet">
+        <input type="text" id="subject" placeholder="Objet" aria-label="entrer-objet">
         <!-- <label for="message">message</label> -->
         <textarea id="message" placeholder="Comment pouvons nous vous aider?"></textarea>
         <div class="submit-container">
-          <input type="submit" class="btn" value="Envoyer">
+          <input type="submit" class="btn" value="Envoyer" aria-label="envoyer-les-informations">
         </div>
       </form>
 
@@ -575,8 +581,8 @@
       </div>
       <div class="footer-contact">
         <h3>S'inscrire à notre</br> newsletter</h3>
-        <input type="mail" placeholder="Email ...">
-        <a href="#"><i class="fa-solid fa-arrow-right fa-2xs"></i></a>
+        <input type="mail" placeholder="Email ..." aria-label="inscription-newsletter">
+        <a href="#" aria-label="fleche de validation"><i class="fa-solid fa-arrow-right fa-2xs"></i></a>
 
       </div>
     </div>
