@@ -445,8 +445,7 @@ header .header-right .header-right-card {
   height: 150px;
   width: 210px;
   border-radius: 25px;
-  background: #0b6270;
-  opacity: 0.7;
+  background: linear-gradient(29deg, rgba(38, 199, 188, 0.7512254902) 1%, rgba(21, 148, 139, 0.7960434174) 43%, rgba(15, 124, 142, 0.8016456583) 89%);
   color: white;
   display: flex;
   justify-content: center;
