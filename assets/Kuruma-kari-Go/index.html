@@ -152,7 +152,7 @@
 
     <div class="header-left">
       <div class="header-title">
-        <h1 id="header-h1">Louez les meilleurs SUVs</h1>
+        <h1 id="header-h1">Louez l'éléctrique du quotidien</h1>
       </div>
 
       <!-- Donne le prix en fonction de la durée demandée -->
@@ -163,7 +163,17 @@
           <a href="#">Forfait</a>
         </div>
 
-        <h3><span id="nightPrice">46</span> € /jour</h3>
+        <div class="model-choice">
+          <select name="cars" id="car-select">
+            <option value="">Choix du véhicule</option>
+            <option value="BMWx1">BMW x1</option>
+            <option value="Hyundaikona">Hyundai Kona</option>
+            <option value="Skodakodiaq">Skoda Kodiaq</option>
+            <option value="Teslamodely">Tesla model Y</option>
+          </select>
+          <div class="model-price"> <span id="nightPrice">-- </span>€ /jour</div>
+        </div>
+
         <form action="" class="form-adresse">
           <input type="text" placeholder="Adresse de retrait ">
 
@@ -296,9 +306,9 @@
             <p>5</p>
           </div>
           <div class="info-AT"><i class="fa-solid fa-gears"></i>
-            <p>Manuel</p>
+            <p>Manuelle</p>
           </div>
-          <div class="info-price"><span>180€</span>/j</div>
+          <div class="info-price"><span>76€</span>/j</div>
 
         </div>
         <div class="layout-over"></div>
@@ -314,12 +324,12 @@
         <div class="model-img"><img src="./assets/img/hyundai-kona.png" alt="Hyundai kona"></div>
         <div class="carousel-info">
           <div class="info-perso"><i class="fa-solid fa-user"></i>
-            <p>5</p>
+            <p>4</p>
           </div>
           <div class="info-AT"><i class="fa-solid fa-gears"></i>
-            <p>Manuel</p>
+            <p>Automatique</p>
           </div>
-          <div class="info-price"><span>180€</span>/j</div>
+          <div class="info-price"><span>57€</span>/j</div>
 
         </div>
         <div class="layout-over"></div>
@@ -337,9 +347,9 @@
             <p>5</p>
           </div>
           <div class="info-AT"><i class="fa-solid fa-gears"></i>
-            <p>Manuel</p>
+            <p>Manuelle</p>
           </div>
-          <div class="info-price"><span>180€</span>/j</div>
+          <div class="info-price"><span>46€</span>/j</div>
           <div class="layout-over"></div>
         </div>
       </div>
@@ -358,7 +368,7 @@
           <div class="info-AT"><i class="fa-solid fa-gears"></i>
             <p>Automatique</p>
           </div>
-          <div class="info-price"><span>180€</span>/j</div>
+          <div class="info-price"><span>98€</span>/j</div>
           <div class="layout-over"></div>
         </div>
       </div>
@@ -567,7 +577,7 @@
       <div class="menu3">
         <ul>
           <li>Termes</li>
-          <li>Conditions Générals de Vente</li>
+          <li>CGV</li>
           <li>Mentions Légales</li>
           <li>Accessibilité</li>
         </ul>

@@ -303,6 +303,25 @@ header .header-left .card h3 {
   text-align: center;
   font-size: 1.5rem;
 }
+header .header-left .card .model-choice {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+header .header-left .card .model-choice #car-select {
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+header .header-left .card .model-choice #car-select:hover {
+  cursor: pointer;
+}
+header .header-left .card .model-choice .model-price {
+  text-align: center;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
 header .header-left .card .form-adresse input[type=text] {
   border-radius: 8px;
   background: #f0f0f0;
@@ -484,6 +503,9 @@ header .header-right .header-right-card .arrow:hover {
 @media screen and (max-width: 600px) {
   .app {
     flex-direction: column;
+  }
+  #header-h1 {
+    text-align: center;
   }
 }
 @media screen and (max-width: 400px) {

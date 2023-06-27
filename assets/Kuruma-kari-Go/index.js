@@ -220,14 +220,33 @@ end_date.addEventListener("change", (e) => {
 });
 
 const bookingCalc = () => {
-  // fonction fléché pour changer et ne pas écrire function
-  let diffTime = Math.abs(
-    new Date(end_date.value) - new Date(start_date.value)
-  );
-  // console.log(diffTime);
-  let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  // console.log(diffDays);
-  total.textContent = diffDays * nightPrice.textContent;
+  const carSelect = document.getElementById("car-select");
+
+  carSelect.addEventListener("change", (e) => {
+    // console.log(e.target.value);
+
+    if (e.target.value === "BMWx1") {
+      nightPrice.textContent = "76";
+    } else if (e.target.value === "Hyundaikona") {
+      nightPrice.textContent = "57";
+    } else if (e.target.value === "Skodakodiaq") {
+      nightPrice.textContent = "46";
+    } else if (e.target.value === "Teslamodely") {
+      nightPrice.textContent = "98";
+    } else {
+      nightPrice.textContent = "-- ";
+    }
+
+    // fonction fléché pour changer et ne pas écrire function
+    let diffTime = Math.abs(
+      new Date(end_date.value) - new Date(start_date.value)
+    );
+    // console.log(diffTime);
+    let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    // console.log(diffDays);
+    total.textContent = diffDays * nightPrice.textContent;
+  });
 };
 
 start_date.addEventListener("change", bookingCalc);
@@ -238,7 +257,9 @@ bookingCalc();
 const cardButton = document.querySelector(".card-button");
 
 cardButton.addEventListener("click", () => {
-  confirm("Votre reservation a bien été prise en compte 🌎 😊 🚗");
+  confirm(
+    `Votre reservation a bien été prise en compte 🌱 🚗 pour un total de ${total.textContent}€.`
+  );
 });
 
 // **********************

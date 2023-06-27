@@ -50,6 +50,26 @@ header {
         font-size: 1.5rem;
       }
 
+      & .model-choice {
+        display: grid;
+        grid-template-columns: 60% 40%;
+
+        & #car-select {
+          border: 1px solid $gray1;
+          border-radius: 5px;
+          padding-left: 15px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        & .model-price {
+          text-align: center;
+          font-weight: bold;
+          user-select: none;
+        }
+      }
+
       & .form-adresse {
         & input[type="text"] {
           border-radius: 8px;
@@ -269,6 +289,9 @@ header {
 @media screen and (max-width: 600px) {
   .app {
     flex-direction: column;
+  }
+  #header-h1 {
+    text-align: center;
   }
 }
 
