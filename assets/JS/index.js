@@ -1,7 +1,3 @@
-// portp.addEventListener("click", () => {
-//   confirm("🚧 Under construction. Please come back later.");
-// });
-
 const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
