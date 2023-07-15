@@ -43,6 +43,17 @@ header {
         & a:hover {
           background: $green2;
           transition: 0.1s ease-out;
+          color: white;
+        }
+
+        & a:first-child {
+          background-color: $green2;
+          color: white;
+        }
+
+        &:hover a:not(:hover) {
+          background-color: white;
+          color: black;
         }
       }
       & h3 {

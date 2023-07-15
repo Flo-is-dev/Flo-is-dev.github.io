@@ -413,22 +413,16 @@ form.addEventListener("submit", (e) => {
 // ******************
 // ******************
 
-// const layoutOver = document.querySelectorAll(".layout-over");
-// const carouselCard = document.querySelectorAll(".carousel-card");
+const carouselCard = document.querySelectorAll(".carousel-card");
 
-// layoutOver.forEach((item) => {
-//   item.addEventListener("mouseover", (e) => {
-//     carouselCard.forEach((card) => {
-//       card.style.background = "#24dfc6";
-//     });
-//   });
-
-//   item.addEventListener("mouseout", (e) => {
-//     carouselCard.forEach((card) => {
-//       card.style.background = "#f0f0f0";
-//     });
-//   });
-// });
+carouselCard.forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    e.target.style.background = "#24dfc6";
+  });
+  item.addEventListener("mouseout", (e) => {
+    e.target.style.background = "#f0f0f0";
+  });
+});
 
 // ******************
 // ******************

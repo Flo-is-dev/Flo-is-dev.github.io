@@ -77,11 +77,12 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #6df8e6;
+  background: rgb(223, 223, 223);
   border-radius: 100vw;
   border: 3px solid white;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: #24dfc6;
+  // background: #24dfc6;
+  background: url(../img/scroll-bar.jpg);
 }
