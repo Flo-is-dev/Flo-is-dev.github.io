@@ -1,0 +1,13 @@
+header {
+  & .logo {
+    position: relative;
+    & i {
+      position: absolute;
+      top: 50%;
+      left: 17px;
+      transform: translateY(-50%);
+
+      font-size: 25px;
+    }
+  }
+}

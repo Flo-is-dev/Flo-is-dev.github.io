@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oh my food</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assets/styles/index.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <div class="circle-anim-container">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+
+        </div>
+    </div>
+
+
+    <header>
+        <div class="logo">ohmyfood</div>
+        <div class="location"><i class="fa-solid fa-location-dot"></i><input type="text"
+                placeholder="Paris, Belleville"></div>
+    </header>
+
+    <main class="reservation">
+        <h1>Réservez le menu qui vous convient</h1>
+        <p>Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
+        <button id="btn1"><a href="#nos-restaurants">Explorer nos restaurants</a></button>
+    </main>
+
+    <section class="fonctionnement">
+        <h2>Fonctionnement</h2>
+
+        <div class="fonction-card-container">
+
+            <div class="fonction-card">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <p>Choisissez un restaurant</p>
+            </div>
+            <div class="fonction-card">
+                <i class="fa-solid fa-list-ul"></i>
+                <p>Composez votre menu</p>
+            </div>
+            <div class="fonction-card">
+                <i class="fa-solid fa-store"></i>
+                <p>Dégustez au restaurant</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="restaurants" id="nos-restaurants">
+
+        <div class="restaurants-container">
+            <h2>Restaurants</h2>
+
+            <div class="restau-card-container">
+
+                <div class="card-menu">
+                    <a href="./menu-la-palette-du-gout.html">
+                        <img src="./Assets/images/restaurants/la-palette-du-gout.jpg" alt="">
+                        <div class="card-badge">Nouveau</div>
+                        <div class="card-menu-title">
+                            <h3>La palette du goût</h3>
+                            <p>Ménilmontant</p>
+
+                            <!-- <img src="./Assets/images/Like.svg" alt=""> -->
+                            <i class="fa-regular fa-heart"></i>
+                            <input type="checkbox" id="heart-click1">
+                            <label for="heart-click1" class="toggle-heart">
+                                <!-- <img src="./Assets/images/Status=Liked (1).svg" alt=""> -->
+                                <i class="fa-solid fa-heart"></i>
+                            </label>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card-menu">
+                    <a href="./menu-la-note-enchantee.html">
+                        <img src="./Assets/images/restaurants/la-note-enchantee.jpg" alt="">
+                        <div class="card-badge">Nouveau</div>
+                        <div class="card-menu-title">
+                            <h3>La note enchantée</h3>
+                            <p>Charonne</p>
+
+                            <i class="fa-regular fa-heart"></i>
+                            <input type="checkbox" id="heart-click2">
+                            <label for="heart-click2" class="toggle-heart"> <i class="fa-solid fa-heart"></i></label>
+
+
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card-menu">
+                    <a href="./menu-a-la-francaise.html">
+                        <img src="./Assets/images/restaurants/a-la-francaise.jpg" alt="">
+                        <div class="card-menu-title">
+                            <h3>À la française</h3>
+                            <p>Cité Rouge </p>
+
+                            <i class="fa-regular fa-heart"></i>
+                            <input type="checkbox" id="heart-click3">
+                            <label for="heart-click3" class="toggle-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </label>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card-menu">
+                    <a href="./menu-le-delice-des-sens.html">
+                        <img src="./Assets/images/restaurants/le-delice-des-sens.jpg" alt="">
+                        <div class="card-menu-title">
+                            <h3>Le délice des sens</h3>
+                            <p>Folie-Méricourt</p>
+
+                            <i class="fa-regular fa-heart"></i>
+                            <input type="checkbox" id="heart-click4">
+                            <label for="heart-click4" class="toggle-heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </label>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>ohmyfood</h2>
+
+        <div class="footer-menu">
+            <a href="#"><i class="fa-solid fa-utensils"></i> Proposer un restaurant</a>
+            <a href="#"><i class="fa-solid fa-handshake-angle"></i> Devenir partenaire</a>
+            <a href="#">Mentions légales</a>
+            <a href="mailto:test@test.fr">Contact</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+.image-menu1,
+.image-menu2,
+.image-menu3,
+.image-menu4 {
+  height: 275px;
+  width: 100%;
+}
+
+.image-menu1 {
+  background: url(.././images/restaurants/la-palette-du-gout.jpg) center/cover;
+}
+
+.image-menu2 {
+  background: url(.././images/restaurants/le-delice-des-sens.jpg) center/cover;
+}
+.image-menu3 {
+  background: url(.././images/restaurants/la-note-enchantee.jpg) center/cover;
+}
+.image-menu4 {
+  background: url(.././images/restaurants/a-la-francaise.jpg) center/cover;
+}
+
+.menu {
+  background-color: $backgroundExtraLight;
+  border-radius: 30px 30px 0 0;
+  max-width: 1055px;
+  margin: -50px auto 0;
+
+  .menu-main-title {
+    // background-color: lightgreen;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    max-width: 350px;
+    margin: 0 auto;
+
+    & h1 {
+      font-size: 28px;
+      font-family: $font1;
+      padding-top: 32px;
+      text-align: center;
+    }
+
+    .heart-reference-box {
+      //   background-color: lightblue;
+      position: relative;
+      & i {
+        //   width: 22px;
+        //   height: 22px;
+        //   padding: 1px 0;
+        //   object-fit: cover;
+        position: absolute;
+        top: 55%;
+        right: 50%;
+        font-size: 22px;
+        //   border-radius: 0px;
+      }
+
+      & input[type="checkbox"] {
+        display: none;
+      }
+
+      & input[type="checkbox"]:checked + .toggle-heart i {
+        opacity: 1;
+      }
+      & .toggle-heart i {
+        opacity: 0;
+        position: absolute;
+        top: 55%;
+        right: 50%;
+        z-index: 10;
+        font-size: 22px;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: linear-gradient($color-primary, $color-second);
+        cursor: pointer;
+        transition: 0.5s ease;
+        transform-origin: 0% 0%;
+      }
+    }
+  }
+
+  & .menu-card-container {
+    // background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    margin-top: 40px;
+
+    & h2 {
+      position: relative;
+      font-size: 16px;
+      font-family: $font2-300;
+      text-transform: uppercase;
+      font-weight: 300;
+      width: 90%;
+      padding-bottom: 4px;
+
+      &::after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        content: "";
+        width: 40px;
+        height: 3px;
+        background-color: $color-tert1;
+      }
+    }
+
+    & .menu-card {
+      background-color: $color-white;
+      border-radius: 15px;
+      width: 90%;
+      display: grid;
+      grid-template-columns: 100% 1fr;
+      transition: 0.5s ease;
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px
+        rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateX(-180px);
+      animation: appa 1.5s cubic-bezier(0.5, 1, 0.79, 1.1) forwards;
+
+      @keyframes appa {
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        grid-template-columns: calc(100% - 59px) 1fr;
+        transition: 0.5s ease;
+
+        & .menu-card-right {
+          //   visibility: visible;
+          width: 59px;
+          transition: 5s ease;
+
+          //   & i {
+          //     visibility: visible;
+          //   }
+        }
+      }
+
+      & .menu-card-left {
+        // background-color: lightcoral;
+        width: auto;
+        display: grid;
+        grid-template-columns: 90% 10%;
+        align-items: flex-end;
+        padding: 15px;
+
+        & h3 {
+          font-size: 18px;
+          font-family: $font2-500;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        & p {
+          padding-top: 5px;
+          font-size: 15px;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        & .menu-card-left-price {
+          font-size: 15px;
+          font-family: $font2-700;
+        }
+      }
+
+      & .menu-card-right {
+        //   background-color: $color-tert1;
+        position: relative;
+        width: auto;
+        background: url(.././images/Select-button.svg) center/cover;
+        border-radius: 0 15px 15px 0;
+
+        //   & i {
+        //     visibility: hidden;
+
+        //     position: absolute;
+        //     top: 50%;
+        //     left: 50%;
+        //     transform: translate(-50%, -50%);
+        //     background-color: $color-white;
+        //     color: $color-tert1;
+        //     border-radius: 50px;
+        //     padding: 3px 4px;
+        //   }
+      }
+    }
+  }
+}
+
+.menu-button {
+  text-align: center;
+  margin: auto;
+  padding: 40px 0;
+}
+
+@media screen and (min-width: 750px) {
+  .menu-card {
+    & .menu-card-left {
+      grid-template-columns: 95% 5% !important;
+    }
+  }
+}
+@media screen and (min-width: 1050px) {
+  .image-menu1,
+  .image-menu2,
+  .image-menu3,
+  .image-menu4 {
+    height: 394px;
+  }
+}
+
+// Agit sur apparition des cards de restaurant. Le SCSS permet avec un boucle "for" d'appliquer un animation-delay avec un interval régulier à toutes les classes commencants par "cd- "
+@for $i from 1 to 11 {
+  .cd-#{$i} {
+    animation-delay: calc($i / 11) * 5s !important;
+  }
+}
