@@ -224,7 +224,7 @@ body {
 
 .fonctionnement {
   min-height: 390px;
-  width: 400px;
+  max-width: 400px;
   margin: 0 auto;
 }
 .fonctionnement h2 {
