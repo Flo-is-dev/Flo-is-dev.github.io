@@ -23,7 +23,8 @@
 
       & .card-menu {
         position: relative;
-        width: 340px;
+        width: 95%;
+        max-width: 340px;
         height: 251px;
         border-radius: 15px;
         background-color: $color-white;
@@ -124,7 +125,7 @@
         justify-content: space-between;
 
         & .card-menu {
-          width: 490px;
+          max-width: 490px;
           height: 251px;
         }
       }
