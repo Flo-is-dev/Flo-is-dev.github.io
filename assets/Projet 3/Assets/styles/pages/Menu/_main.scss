@@ -7,17 +7,17 @@
 }
 
 .image-menu1 {
-  background: url(.././images/restaurants/la-palette-du-gout.jpg) center/cover;
+  background: url(.././images/restaurants/la-palette-du-gout.webp) center/cover;
 }
 
 .image-menu2 {
-  background: url(.././images/restaurants/le-delice-des-sens.jpg) center/cover;
+  background: url(.././images/restaurants/le-delice-des-sens.webp) center/cover;
 }
 .image-menu3 {
-  background: url(.././images/restaurants/la-note-enchantee.jpg) center/cover;
+  background: url(.././images/restaurants/la-note-enchantee.webp) center/cover;
 }
 .image-menu4 {
-  background: url(.././images/restaurants/a-la-francaise.jpg) center/cover;
+  background: url(.././images/restaurants/a-la-francaise.webp) center/cover;
 }
 
 .menu {
@@ -227,6 +227,6 @@
 // Agit sur apparition des cards de restaurant. Le SCSS permet avec un boucle "for" d'appliquer un animation-delay avec un interval régulier à toutes les classes commencants par "cd- "
 @for $i from 1 to 11 {
   .cd-#{$i} {
-    animation-delay: calc($i / 11) * 5s !important;
+    animation-delay: calc($i / 11) * 3s !important;
   }
 }

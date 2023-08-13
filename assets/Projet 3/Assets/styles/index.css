@@ -492,19 +492,19 @@ header .logo i {
 }
 
 .image-menu1 {
-  background: url(.././images/restaurants/la-palette-du-gout.jpg) center/cover;
+  background: url(.././images/restaurants/la-palette-du-gout.webp) center/cover;
 }
 
 .image-menu2 {
-  background: url(.././images/restaurants/le-delice-des-sens.jpg) center/cover;
+  background: url(.././images/restaurants/le-delice-des-sens.webp) center/cover;
 }
 
 .image-menu3 {
-  background: url(.././images/restaurants/la-note-enchantee.jpg) center/cover;
+  background: url(.././images/restaurants/la-note-enchantee.webp) center/cover;
 }
 
 .image-menu4 {
-  background: url(.././images/restaurants/a-la-francaise.jpg) center/cover;
+  background: url(.././images/restaurants/a-la-francaise.webp) center/cover;
 }
 
 .menu {
@@ -663,41 +663,41 @@ header .logo i {
   }
 }
 .cd-1 {
-  animation-delay: 0.4545454545s !important;
+  animation-delay: 0.2727272727s !important;
 }
 
 .cd-2 {
-  animation-delay: 0.9090909091s !important;
+  animation-delay: 0.5454545455s !important;
 }
 
 .cd-3 {
-  animation-delay: 1.3636363636s !important;
+  animation-delay: 0.8181818182s !important;
 }
 
 .cd-4 {
-  animation-delay: 1.8181818182s !important;
+  animation-delay: 1.0909090909s !important;
 }
 
 .cd-5 {
-  animation-delay: 2.2727272727s !important;
+  animation-delay: 1.3636363636s !important;
 }
 
 .cd-6 {
-  animation-delay: 2.7272727273s !important;
+  animation-delay: 1.6363636364s !important;
 }
 
 .cd-7 {
-  animation-delay: 3.1818181818s !important;
+  animation-delay: 1.9090909091s !important;
 }
 
 .cd-8 {
-  animation-delay: 3.6363636364s !important;
+  animation-delay: 2.1818181818s !important;
 }
 
 .cd-9 {
-  animation-delay: 4.0909090909s !important;
+  animation-delay: 2.4545454545s !important;
 }
 
 .cd-10 {
-  animation-delay: 4.5454545455s !important;
+  animation-delay: 2.7272727273s !important;
 }/*# sourceMappingURL=index.css.map */
