@@ -1,143 +1,162 @@
+// Les fonts
+
 @font-face {
-  font-family: font-reg;
-  src: url(../fonts/PlayfairDisplay-Regular.ttf);
-}
-@font-face {
-  font-family: font-bold;
-  src: url(../fonts/PlayfairDisplay-ExtraBold.ttf);
+  font-family: "Roboto-300";
+  src: url(../fonts/Roboto/Roboto-Light.ttf);
 }
 
+@font-face {
+  font-family: "Roboto-500";
+  src: url(../fonts/Roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Roboto-700";
+  src: url(../fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Shrikhand";
+  src: url(../fonts/Shrikhand/Shrikhand-Regular.ttf);
+}
+
+$font1: "Shrikhand";
+$font2-300: "roboto-300";
+$font2-500: "roboto-500";
+$font2-700: "roboto-700";
+
+// Les couleurs
+$color-white: #fff;
+$color-primary: #9356dc;
+$color-second: #ff79da;
+$color-tert1: #99e2d0;
+$color-tert2: #008766;
+$color-blue1: #89c8fa;
+$color-blue2: #003a68;
+$backgroundExtraLight: #f6f6f6;
+$backgroundLight: #eaeaea;
+$backgroundStrong: #353535;
+
+// Création d'une propriété custom pour permettre l'animation du background du button
+
+@property --color-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff79da;
+}
+
+@property --color-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #9356dc;
+}
+
+// Settings
 * {
-  padding: 0;
   margin: 0;
-  & .title {
-    user-select: none;
-  }
-  & .skills {
-    user-select: none;
-  }
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
-*::selection {
-  background: #f0b392;
-  color: #fefeff;
-  font-weight: bold;
-  border-radius: 50px;
-}
+
 html {
   scroll-behavior: smooth;
 }
-body {
-  font-family: "quicksand", serif;
-  background: #000101;
-  color: #fefeff;
-  transition: 0.7s ease-in-out;
+
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
-.wrapper {
-  perspective: 900px;
-}
-.appear {
-  opacity: 0;
-  transform: translateY(100%) rotateX(-80deg);
-  transform-origin: top center;
-  transform-style: preserve-3d;
-  transition: 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.appear.is-inview {
-  transition-delay: 1s;
-  opacity: 1;
-  transform: none;
-}
-h1 {
-  font-family: "Raleway", serif !important;
-}
-h2 {
-  font-size: calc(2.8rem + 5vw);
-  text-align: center;
-  color: rgb(217, 217, 217);
-  font-family: "Raleway", serif;
-  font-weight: 400;
-  letter-spacing: 3px;
-}
-
-.title {
-  font-size: calc(1.5rem + 5vw);
-  letter-spacing: 0;
-}
-span {
-  display: inline-block;
-}
 a,
 a:visited {
-  cursor: pointer;
-  position: relative;
+  color: #101010;
   text-decoration: none;
-  color: #fefeff;
-  transition: 0.1s linear;
-  font-size: calc(0.8rem + 0.8vw);
-}
-a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: #fefeff;
-  bottom: -4px;
-  left: 0;
-  transform-origin: left;
-  z-index: 10 !important;
 }
 
-#testgit::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background: #00000015;
-  bottom: -4px;
-  left: 0;
-  transform-origin: left;
-  z-index: 100 !important;
+body {
+  font-family: $font2-300, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
-a:hover {
-  transform: scale(1.04);
-  color: rgb(217, 217, 217);
-}
-a:hover::after {
-  animation: animLink 1.4s infinite ease-in-out;
-}
-@keyframes animLink {
-  50% {
-    transform: scaleX(0.2);
-  }
-  100% {
-    transform: scaleX(1);
+
+.layout {
+  &:before {
+    content: "";
+    z-index: 1000;
+    position: fixed;
+    height: 200%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $backgroundStrong;
+    animation: animBefore 2.5s ease forwards;
+    animation-delay: 0.15s;
+
+    @keyframes animBefore {
+      0%,
+      90% {
+        opacity: 1;
+        pointer-events: none;
+      }
+
+      100% {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
   }
 }
 
-.img {
-  height: 395px;
-  width: 100vw;
-  max-width: 395px;
-  margin: 0 auto;
-  filter: grayscale(100%);
-  transition: 1.6s;
-}
-.img:hover {
-  filter: grayscale(10%);
-}
-.line {
-  height: 2px;
-  width: 70%;
-  margin: 0 auto;
-  background: #000101;
-  transition: 1s cubic-bezier(0.77, 0, 0.18, 1);
-  /* transform: left; */
-  transition-delay: 0.45s;
-  opacity: 0;
-  transform: scaleX(0);
-}
-.line-wrapper.is-inview .line {
-  opacity: 1;
-  transform: scaleX(1);
+.circle-anim-container {
+  z-index: 1001;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 25px;
+
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    animation: Jump 1.5s ease forwards;
+    animation-delay: 0.25s;
+
+    &:nth-child(1) {
+      animation-delay: 0.2s;
+      background-color: $color-primary;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.4s;
+      background-color: $color-second;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.6s;
+      background-color: $color-primary;
+    }
+
+    @keyframes Jump {
+      0%,
+      66% {
+        transform: translateY(20px);
+        // filter: blur(0);
+        opacity: 1;
+      }
+
+      33% {
+        transform: translateY(0);
+        // filter: blur(10px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        // filter: blur(10px);
+        opacity: 0;
+        pointer-events: none;
+        z-index: -10;
+      }
+    }
+  }
 }
