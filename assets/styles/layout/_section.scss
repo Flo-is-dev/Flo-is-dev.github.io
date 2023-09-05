@@ -1,0 +1,109 @@
+.about {
+  margin: 400px 0 150px;
+}
+
+.img1 {
+  background: url(../img/florent-gironde.jpeg) top/cover;
+  border-radius: 5px;
+}
+.h2-wrapper {
+  mix-blend-mode: exclusion;
+  margin: -220px 0 200px;
+}
+.about p {
+  width: 70%;
+  min-width: 280px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: calc(20px + 4.5vw);
+  font-size: calc(1rem + 1vw);
+  letter-spacing: 1px;
+}
+.skills {
+  margin: 100px 0 150px;
+}
+.skills h2 {
+  margin-bottom: 150px;
+}
+
+.skills .wrapper {
+  margin: 30px 0;
+}
+
+.skills .appear {
+  text-align: center;
+  transition-delay: 0.6s;
+}
+.skills p {
+  font-size: calc(1rem + 4vw);
+  font-family: "font-bold", serif;
+  letter-spacing: 4px;
+  background: #000101;
+  color: #fefeff;
+  display: inline-block;
+  padding: 0 12px 12px;
+  border-radius: 5px;
+}
+
+.portfolio {
+  margin: 150px 0;
+}
+
+.projects-container {
+  margin-top: 100px;
+}
+
+.project {
+  position: relative;
+  width: 60vw;
+  max-width: 600px;
+  margin: 50px 5vw;
+}
+.project::before {
+  content: "";
+  position: absolute;
+  height: 110%;
+  width: 100%;
+  top: -3px;
+  background: #fefeff;
+  transition: width 1s ease-out;
+  transition-delay: 0.85s;
+}
+.project.is-inview::before {
+  width: 0;
+}
+#p2 {
+  margin: 0 6vw 0 auto;
+}
+#p3 {
+  margin-left: 8vw;
+}
+.project img {
+  transition: 0.4s ease-out;
+  width: 100%;
+  border-radius: 5px;
+}
+.project:hover img {
+  filter: brightness(20%);
+}
+.project:hover .projects-infos {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+.projects-infos {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50px, -50%);
+  margin-left: 8vw;
+  transition: 0.4s ease-out;
+  opacity: 0;
+}
+
+.projects-infos a {
+  font-size: calc(1rem + 3vw);
+}
+.projects-infos p {
+  font-size: 2rem;
+  margin-top: 1.5vw;
+  color: #fefeff;
+}

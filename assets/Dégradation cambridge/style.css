@@ -1,0 +1,193 @@
+:root {
+  --primary-color: #b813aaa3;
+  --secondary-color: #db34cdc9;
+  --background-color: #5856d6a8;
+  --text-color: rgb(233, 233, 233);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+#bloc {
+  background: #147d539f;
+  border-radius: 15px;
+  backdrop-filter: blur(30px);
+  display: inline-block;
+  position: absolute;
+  width: 40%;
+  max-width: 450px;
+  /* max-height: 500px; */
+  height: 75vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.838);
+}
+
+.card {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  /* top: 25%;
+  left: 35%; */
+  gap: 20px;
+}
+
+h1 {
+  font-size: calc(1.4rem + 1vw);
+  margin-top: 0;
+  text-align: center;
+  letter-spacing: 1.6px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 50%;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.734);
+  border: 3px solid #ccccccc2;
+  transition: 0.2s;
+}
+
+input:focus {
+  border: 3px solid var(--primary-color);
+  transition: 0.2s;
+}
+
+button {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, 0.2s;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+  letter-spacing: 1.6px;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, 0.2);
+}
+
+button:hover i {
+  transition: 2s cubic-bezier(0.75, 0.82, 0.165, 1);
+  transform: rotate(720deg);
+}
+
+p {
+  text-align: center;
+  letter-spacing: 1.8px;
+}
+
+#result {
+  font-size: 1.5rem;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.152);
+  border-radius: 5px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+  user-select: text;
+}
+
+#back {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(9, 9, 9, 0.682);
+  box-shadow: 8px 6px 4px 1px rgba(14, 98, 59, 0.553);
+  transition: 0.2s;
+}
+
+#back:hover {
+  box-shadow: 4px 3px 4px 1px rgba(23, 159, 95, 0.553);
+  transition: 0.2s;
+}
+
+.back-a {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+html {
+  height: 100%;
+  /* max-height: 600px; */
+  width: auto;
+  background-color: hsla(200, 40%, 30%, 0.4);
+  background-image: url("https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png"),
+    url("https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png"),
+    url("https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png"),
+    url("https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png"),
+    url("https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png");
+  background-repeat: repeat-x;
+  background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+  background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
+  animation: 50s para infinite linear;
+}
+
+@keyframes para {
+  100% {
+    background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
+      400px 0;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  #bloc {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #bloc {
+    width: 75%;
+  }
+  h1 {
+    font-size: calc(1.2rem + 1.8vw);
+  }
+}

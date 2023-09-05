@@ -1,71 +1,33 @@
 footer {
-  height: 186px;
-  background-color: $backgroundStrong;
-  padding: 22px 25px;
+  margin: 150px 0 120px;
 
-  & h2 {
-    color: $color-white;
-    font-family: $font1;
-    font-size: 18px;
-    margin-bottom: 16px;
-    letter-spacing: 1px;
-  }
-
-  .footer-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-
-    & a {
-      color: $color-white;
-      font-family: $font2-500;
-      font-size: 16px;
-      text-decoration: none;
-      cursor: pointer;
-
-      & i {
-        padding-right: 11px;
-        font-size: 11px;
+  & p {
+    font-size: calc(1rem + 2vw);
+    margin: 25px 0;
+    text-align: center;
+    & i {
+      color: #000101;
+      transition: 2s ease;
+      &:hover {
+        transform: rotateX(720deg);
+        color: goldenrod;
       }
-    }
-
-    & a:nth-child(2) i {
-      padding-right: 7px;
-    }
-
-    & a:nth-child(n + 3) {
-      font-family: $font2-300;
-
-      font-weight: 400;
     }
   }
 }
+#l2 {
+  transition-delay: 1.2s;
+}
+#l3 {
+  transition-delay: 1.6s;
+}
+footer a {
+  font-family: "font-bold", serif;
+  color: #000101;
+  font-size: calc(1rem + 2vw);
+}
 
-@media screen and (min-width: 950px) {
-  footer {
-    max-height: 114px;
-    padding: 30px 25px;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 16px;
-
-    & h2 {
-      height: 100%;
-      display: flex;
-      align-items: flex-end;
-    }
-
-    & .footer-menu {
-      flex-direction: row;
-      align-items: flex-end;
-
-      & a:nth-child(1),
-      a:nth-child(2) {
-        width: calc(22px + 168px);
-      }
-      & a:nth-child(n + 3) {
-        width: 130px;
-      }
-    }
-  }
+.img2 {
+  background: url(../img/f-gironde.jpg) center/cover;
+  border-radius: 5px;
 }

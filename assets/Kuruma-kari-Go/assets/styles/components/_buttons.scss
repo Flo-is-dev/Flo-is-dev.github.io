@@ -1,0 +1,38 @@
+#button {
+  font-family: "quicksand", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  font-size: 1.1rem;
+  background: $green3;
+  display: inline;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  transition: 0.15s ease-out;
+}
+
+#button:hover {
+  background: $green2;
+  transition: 0.15s ease-out;
+}
+
+#button2 {
+  background: white;
+  display: inline;
+  color: black;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn {
+  background: $gray2;
+  display: inline;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
