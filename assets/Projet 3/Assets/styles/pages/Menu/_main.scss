@@ -41,12 +41,18 @@
     }
 
     .heart-reference-box {
+      //   background-color: lightblue;
       position: relative;
       & i {
+        //   width: 22px;
+        //   height: 22px;
+        //   padding: 1px 0;
+        //   object-fit: cover;
         position: absolute;
         top: 55%;
         right: 50%;
         font-size: 22px;
+        //   border-radius: 0px;
       }
 
       & input[type="checkbox"] {
@@ -75,6 +81,7 @@
   }
 
   & .menu-card-container {
+    // background-color: lightblue;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,36 +110,24 @@
     }
 
     & .menu-card {
+      background-color: $color-white;
+      border-radius: 15px;
+      width: 90%;
+      display: grid;
+      grid-template-columns: 100% 1fr;
+      transition: 0.5s ease;
       cursor: pointer;
       overflow: hidden;
-      transform: translateX(-180px);
+      box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px
+        rgba(0, 0, 0, 0.1);
       opacity: 0;
+      transform: translateX(-180px);
       animation: appa 1.5s cubic-bezier(0.5, 1, 0.79, 1.1) forwards;
 
       @keyframes appa {
-        from {
-          transform: translateX(-180px);
-          opacity: 0;
-          background-color: $color-white;
-          border-radius: 15px;
-          width: 90%;
-          display: grid;
-          grid-template-columns: 100% 1fr;
-          transition: 0.5s ease;
-          box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px
-            rgba(0, 0, 0, 0.1);
-        }
         to {
           transform: translateX(0);
           opacity: 1;
-          background-color: $color-white;
-          border-radius: 15px;
-          width: 90%;
-          display: grid;
-          grid-template-columns: 100% 1fr;
-          transition: 0.5s ease;
-          box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px
-            rgba(0, 0, 0, 0.1);
         }
       }
 
@@ -141,12 +136,18 @@
         transition: 0.5s ease;
 
         & .menu-card-right {
+          //   visibility: visible;
           width: 59px;
           transition: 5s ease;
+
+          //   & i {
+          //     visibility: visible;
+          //   }
         }
       }
 
       & .menu-card-left {
+        // background-color: lightcoral;
         width: auto;
         display: grid;
         grid-template-columns: 90% 10%;
@@ -178,10 +179,24 @@
       }
 
       & .menu-card-right {
+        //   background-color: $color-tert1;
         position: relative;
         width: auto;
         background: url(.././images/Select-button.svg) center/cover;
         border-radius: 0 15px 15px 0;
+
+        //   & i {
+        //     visibility: hidden;
+
+        //     position: absolute;
+        //     top: 50%;
+        //     left: 50%;
+        //     transform: translate(-50%, -50%);
+        //     background-color: $color-white;
+        //     color: $color-tert1;
+        //     border-radius: 50px;
+        //     padding: 3px 4px;
+        //   }
       }
     }
   }
