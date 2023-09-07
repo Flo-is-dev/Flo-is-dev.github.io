@@ -56,12 +56,14 @@ img {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+  text-decoration: underline;
 }
 
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+  text-decoration: underline;
 }
 
 .topnav .icon {
@@ -540,7 +542,7 @@ footer {
 .formData span.span-city {
   visibility: hidden;
   opacity: 0;
-  font-size: 17px;
+  font-size: 12px;
 }
 
 .error span.span {
@@ -548,7 +550,7 @@ footer {
   opacity: 1;
   color: #ff4e60;
 }
-.error span.span-city {
+span.span-city.error {
   visibility: visible;
   opacity: 1;
   color: #ff4e60;

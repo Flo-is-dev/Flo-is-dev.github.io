@@ -32,9 +32,15 @@ close.addEventListener("click", () => {
 const inputs = document.querySelectorAll(
   "input[type=text],input[type=email],input[type=date],input[type=number],input[type=radio],input[type=checkbox]"
 );
+const firstName = document.getElementById("first");
+const lastName = document.getElementById("last");
+const email = document.getElementById("email");
+const birthDate = document.getElementById("birthdate");
+const quantity = document.getElementById("quantity");
+const spanCity = document.querySelector(".span-city");
+const checkbox1 = document.getElementById("checkbox1");
 
 const firstnameChecker = (value) => {
-  const firstName = document.getElementById("first");
   if (value.length <= 1) {
     firstName.parentElement.classList.add("error");
     firstName.classList.add("error-input");
@@ -47,18 +53,19 @@ const firstnameChecker = (value) => {
 
 const lastnameChecker = (value) => {
   //   console.log(value);
-  const lastName = document.getElementById("last");
+  //   const lastName = document.getElementById("last");
   if (value.length <= 1) {
     lastName.parentElement.classList.add("error");
     lastName.classList.add("error-input");
   } else {
     lastName.parentElement.classList.remove("error");
     lastName.classList.remove("error-input");
+    return true;
   }
 };
 
 const emailChecker = (value) => {
-  const email = document.getElementById("email");
+  //   const email = document.getElementById("email");
   //   console.log(value);
   if (!value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
     email.parentElement.classList.add("error");
@@ -70,9 +77,17 @@ const emailChecker = (value) => {
   }
 };
 
+// on met le formulaire à la date du jour
+let today = new Date().toISOString().split("T")[0];
+birthDate.value = today;
+birthDate.max = today;
+
 const birthdateChecker = (value) => {
-  //   console.log(value);
-  const birthDate = document.getElementById("birthdate");
+  //   let currentDate = new Date();
+  //   let birthdateDay = new Date(value);
+  //   let diff = new Date(currentDate - birthdateDay);
+  //   let age = Math.abs(diff.getUTCFullYear() - 1970);
+  //   console.log(age);
 
   if (value === "") {
     birthDate.classList.add("error-input");
@@ -80,13 +95,11 @@ const birthdateChecker = (value) => {
   } else {
     birthDate.classList.remove("error-input");
     birthDate.parentElement.classList.remove("error");
+    return true;
   }
 };
 
 const playChecker = (value) => {
-  //   console.log(value);
-  const quantity = document.getElementById("quantity");
-
   if (isNaN(value) || value < 0 || value > 99) {
     quantity.classList.add("error-input");
     quantity.parentElement.classList.add("error");
@@ -96,23 +109,35 @@ const playChecker = (value) => {
   }
 };
 
-const cityChecker = (value) => {
-  //   console.log(value);
-  const spanCity = document.querySelector(".span-city");
+// TODO ********************* input radio
 
-  if (value !== true) {
-    spanCity.classList.add("error-input");
-    spanCity.classList.add("error");
+const selectedRadio = document.querySelector('input[name="location"]');
+const textLabel = document.querySelector(".text-label");
+
+const cityChecker = (selectedRadio) => {
+  console.log(selectedRadio);
+
+  if (selectedRadio.checked == false) {
+    // spanCity.classList.add("error");
+    return false;
   } else {
-    spanCity.classList.remove("error-input");
     spanCity.classList.remove("error");
+    return true;
   }
 };
+console.log(cityChecker(selectedRadio));
+
+// Création d'un forEach pour récupérer la valeur de chaque radio input individuellement
+
+document.querySelectorAll('input[name="location"]').forEach((radio) => {
+  radio.addEventListener("change", () => {
+    // Appeler cityChecker avec la valeur du bouton radio sélectionné
+    cityChecker(radio.value);
+    console.log(cityChecker(radio.value));
+  });
+});
 
 const cgvChecker = (value) => {
-  const checkbox1 = document.getElementById("checkbox1");
-  //   console.log(value);
-
   if (value === false) {
     checkbox1.classList.add("error-input");
     checkbox1.parentElement.classList.add("error");
@@ -124,8 +149,6 @@ const cgvChecker = (value) => {
 
 inputs.forEach((input) => {
   input.addEventListener("input", (e) => {
-    // console.log(e);
-    // console.log(e.target.value);
     switch (e.target.id) {
       case "first":
         firstnameChecker(e.target.value);
@@ -142,14 +165,6 @@ inputs.forEach((input) => {
       case "quantity":
         playChecker(e.target.value);
         break;
-      case "location1":
-      case "location2":
-      case "location3":
-      case "location4":
-      case "location5":
-      case "location6":
-        cityChecker(e.isTrusted);
-        break;
       case "checkbox1":
         cgvChecker(e.target.checked);
         break;
@@ -163,23 +178,17 @@ inputs.forEach((input) => {
 
 // Bouton qui permet de soumettre le formulaire. Affiche un message d'erreur si tous les champs ne sont pas valide
 const form = document.getElementById("myForm");
-const firstName = document.getElementById("first");
-const lastName = document.getElementById("last");
-const email = document.getElementById("email");
-const birthDate = document.getElementById("birthdate");
-const quantity = document.getElementById("quantity");
-const spanCity = document.querySelector(".span-city");
-const checkbox1 = document.getElementById("checkbox1");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (
-    !firstName.value ||
-    !lastName.value ||
+    !firstnameChecker(firstName.value) ||
+    !lastnameChecker(lastName.value) ||
     !emailChecker(email.value) ||
-    !birthDate.value ||
+    !birthdateChecker(birthDate.value) ||
     !quantity.value ||
+    !cityChecker(selectedRadio) ||
     !checkbox1.checked
   ) {
     if (!firstName.value) {
@@ -191,27 +200,47 @@ form.addEventListener("submit", (e) => {
     if (!emailChecker(email.value)) {
       emailChecker("");
     }
-    if (!birthDate.value) {
+    if (!birthdateChecker(birthDate.value)) {
       birthdateChecker("");
     }
     if (!quantity.value) {
       playChecker(-1);
     }
+    if (!cityChecker(selectedRadio)) {
+      cityChecker(!selectedRadio);
+      spanCity.classList.add("error");
+      console.log("pas de VILLE");
+    } else {
+      spanCity.classList.remove("error");
+      return true;
+    }
   } else {
     // Si toutes les conditions sont satisfaites, exécuter le reste du code
+    // création d'un obket data pour exporter les données du formulaire
     const data = {
       firstName: firstName.value,
       lastName: lastName.value,
       emailChecker: email.value,
       birthdateChecker: birthDate.value,
       playChecker: quantity.value,
-      cityChecker: spanCity,
+      cityChecker: cityChecker(
+        document.querySelector('input[name="location"]:checked').value
+      ),
       cgvChecker: checkbox1.checked,
     };
     console.log(data);
 
     const modalBodySucced = document.querySelector(".modal-body-succed");
     modalBodySucced.classList.remove("disable");
+
+    close.addEventListener("click", () => {
+      const modalBodySucced = document.querySelector(".modal-body-succed");
+      const myForm = document.getElementById("myForm");
+
+      modalbg.style.display = "none";
+      modalBodySucced.classList.add("disable");
+      myForm.reset();
+    });
   }
 });
 
