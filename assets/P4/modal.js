@@ -44,6 +44,7 @@ const firstnameChecker = (value) => {
   if (value.length <= 1) {
     firstName.parentElement.classList.add("error");
     firstName.classList.add("error-input");
+    return false;
   } else {
     firstName.parentElement.classList.remove("error");
     firstName.classList.remove("error-input");
@@ -111,31 +112,33 @@ const playChecker = (value) => {
 
 // TODO ********************* input radio
 
-const selectedRadio = document.querySelector('input[name="location"]');
-const textLabel = document.querySelector(".text-label");
+const RadioBtn = document.querySelectorAll('input[name="location"]');
+// const selectedRadio = document.querySelector('input[name="location"]:checked');
+let cityChecked = false;
 
-const cityChecker = (selectedRadio) => {
-  console.log(selectedRadio);
+const cityChecker = (city) => {
+  console.log(city);
 
-  if (selectedRadio.checked == false) {
-    // spanCity.classList.add("error");
-    return false;
-  } else {
+  if (city) {
     spanCity.classList.remove("error");
-    return true;
+    cityChecked = true;
+  } else {
+    spanCity.classList.add("error");
+    cityChecked = false;
   }
 };
-console.log(cityChecker(selectedRadio));
 
 // Création d'un forEach pour récupérer la valeur de chaque radio input individuellement
 
-document.querySelectorAll('input[name="location"]').forEach((radio) => {
+RadioBtn.forEach((radio) => {
   radio.addEventListener("change", () => {
-    // Appeler cityChecker avec la valeur du bouton radio sélectionné
+    // *Appeler cityChecker avec la valeur du bouton radio sélectionné
+    console.log(radio.value);
     cityChecker(radio.value);
-    console.log(cityChecker(radio.value));
   });
 });
+
+// TODO------------------
 
 const cgvChecker = (value) => {
   if (value === false) {
@@ -188,7 +191,8 @@ form.addEventListener("submit", (e) => {
     !emailChecker(email.value) ||
     !birthdateChecker(birthDate.value) ||
     !quantity.value ||
-    !cityChecker(selectedRadio) ||
+    //! Cette ligne est censsé etre vrai pk elle retourne un message comme si elle était fausse?....
+    !cityChecked ||
     !checkbox1.checked
   ) {
     if (!firstName.value) {
@@ -206,13 +210,9 @@ form.addEventListener("submit", (e) => {
     if (!quantity.value) {
       playChecker(-1);
     }
-    if (!cityChecker(selectedRadio)) {
-      cityChecker(!selectedRadio);
-      spanCity.classList.add("error");
+    if (!cityChecked) {
+      cityChecker(null);
       console.log("pas de VILLE");
-    } else {
-      spanCity.classList.remove("error");
-      return true;
     }
   } else {
     // Si toutes les conditions sont satisfaites, exécuter le reste du code
@@ -223,9 +223,8 @@ form.addEventListener("submit", (e) => {
       emailChecker: email.value,
       birthdateChecker: birthDate.value,
       playChecker: quantity.value,
-      cityChecker: cityChecker(
-        document.querySelector('input[name="location"]:checked').value
-      ),
+      cityChecker: document.querySelector('input[name="location"]:checked')
+        .value,
       cgvChecker: checkbox1.checked,
     };
     console.log(data);
