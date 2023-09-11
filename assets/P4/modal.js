@@ -1,3 +1,4 @@
+// Cette fonction gère la partie responsiv du menu mobile
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -7,28 +8,30 @@ function editNav() {
   }
 }
 
-// DOM Elements
+// Selection des éléments du DOM
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
+// const formData = document.querySelectorAll(".formData");
 const btnSubmit = document.querySelector(".btn-submit");
+const close = document.querySelector(".close");
 
-// launch modal event, au click joue la fonction "launchModal"
+// launch modal event, au click joue la fonction "launchModal", affiche la modal
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// fonction launch modal
+// fonction pour afficher la modal
 function launchModal() {
   modalbg.style.display = "block";
 }
-
-//   On cible la croix de fermeture de modal,
-const close = document.querySelector(".close");
 
 //  au click la modal se ferme
 close.addEventListener("click", () => {
   modalbg.style.display = "none";
 });
 
+// -------------------------------------------------------------------------
+// ---Partie du code liée à la logique du formulaire------------------------
+
+// Selection des éléments du DOM liées au formulaire
 const inputs = document.querySelectorAll(
   "input[type=text],input[type=email],input[type=date],input[type=number],input[type=radio],input[type=checkbox]"
 );
@@ -58,6 +61,7 @@ const lastnameChecker = (value) => {
   if (value.length <= 1) {
     lastName.parentElement.classList.add("error");
     lastName.classList.add("error-input");
+    return false;
   } else {
     lastName.parentElement.classList.remove("error");
     lastName.classList.remove("error-input");
@@ -71,6 +75,7 @@ const emailChecker = (value) => {
   if (!value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
     email.parentElement.classList.add("error");
     email.classList.add("error-input");
+    return false;
   } else {
     email.classList.remove("error-input");
     email.parentElement.classList.remove("error");
@@ -93,6 +98,7 @@ const birthdateChecker = (value) => {
   if (value === "") {
     birthDate.classList.add("error-input");
     birthDate.parentElement.classList.add("error");
+    return false;
   } else {
     birthDate.classList.remove("error-input");
     birthDate.parentElement.classList.remove("error");
@@ -110,14 +116,16 @@ const playChecker = (value) => {
   }
 };
 
-// TODO ********************* input radio
+// ---------------------------------
+// --------PARTIE LIEE A LA GESTION DES INPUTs RADIOs
 
 const RadioBtn = document.querySelectorAll('input[name="location"]');
-// const selectedRadio = document.querySelector('input[name="location"]:checked');
+
+// J'initie une variable qui aura la valeur "false" par défaut
 let cityChecked = false;
 
 const cityChecker = (city) => {
-  console.log(city);
+  //   console.log(city);
 
   if (city) {
     spanCity.classList.remove("error");
@@ -132,13 +140,10 @@ const cityChecker = (city) => {
 
 RadioBtn.forEach((radio) => {
   radio.addEventListener("change", () => {
-    // *Appeler cityChecker avec la valeur du bouton radio sélectionné
-    console.log(radio.value);
-    cityChecker(radio.value);
+    // Appeler cityChecker avec la valeur du bouton radio sélectionné
+    cityChecker(radio.value); // console.log(radio.value);
   });
 });
-
-// TODO------------------
 
 const cgvChecker = (value) => {
   if (value === false) {
@@ -150,6 +155,7 @@ const cgvChecker = (value) => {
   }
 };
 
+// Ajout d'un event listener sur chaque champ d'entrée pour valider son contenu en temps réel
 inputs.forEach((input) => {
   input.addEventListener("input", (e) => {
     switch (e.target.id) {
@@ -183,6 +189,7 @@ inputs.forEach((input) => {
 const form = document.getElementById("myForm");
 
 form.addEventListener("submit", (e) => {
+  // Enlève le comportement pas défaut de l'input de type submit
   e.preventDefault();
 
   if (
@@ -191,7 +198,6 @@ form.addEventListener("submit", (e) => {
     !emailChecker(email.value) ||
     !birthdateChecker(birthDate.value) ||
     !quantity.value ||
-    //! Cette ligne est censsé etre vrai pk elle retourne un message comme si elle était fausse?....
     !cityChecked ||
     !checkbox1.checked
   ) {
@@ -212,11 +218,10 @@ form.addEventListener("submit", (e) => {
     }
     if (!cityChecked) {
       cityChecker(null);
-      console.log("pas de VILLE");
     }
   } else {
     // Si toutes les conditions sont satisfaites, exécuter le reste du code
-    // création d'un obket data pour exporter les données du formulaire
+    // création d'un objet data pour exporter les données du formulaire
     const data = {
       firstName: firstName.value,
       lastName: lastName.value,
@@ -227,7 +232,7 @@ form.addEventListener("submit", (e) => {
         .value,
       cgvChecker: checkbox1.checked,
     };
-    console.log(data);
+    console.log("Objet data", data);
 
     const modalBodySucced = document.querySelector(".modal-body-succed");
     modalBodySucced.classList.remove("disable");
