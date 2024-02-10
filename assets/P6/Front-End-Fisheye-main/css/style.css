@@ -1,0 +1,287 @@
+@import url("photographer.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Settings --------------------------------- */
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 90px; */
+  margin-top: 42px;
+}
+
+h1 {
+  color: #901c1c;
+  font-size: 36px;
+  margin-right: 100px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+/* ------main ------------------------------------------ */
+
+header a {
+  margin-left: 100px;
+}
+
+.logo {
+  height: 50px;
+  /* margin-left: 100px; */
+}
+
+.photographer_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin: 100px 50px 50px;
+}
+
+.photographer_section article {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.photographer_section article h2,
+.photograph-header h1 {
+  color: #d3573c;
+  font-size: 36px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.photograph-header h1 {
+  font-size: 48px;
+}
+
+.photographer_section article h3,
+.photograph-header h3 {
+  color: #d3573c;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.photograph-header h3 {
+  font-size: 24px;
+}
+
+.photographer_section article h4 {
+  color: #757575;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.photographer_section article p,
+.photograph-header p {
+  color: #000;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.photograph-header p {
+  font-size: 18px;
+}
+
+.photographer_section a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.photographer_section img,
+.photograph-header img {
+  height: 200px;
+  width: 200px;
+  border-radius: 150px;
+  object-fit: cover;
+}
+
+.photograph-header {
+  display: grid;
+  grid-template-columns: 45% 15% 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.photograph-header-info {
+  padding-left: 50px;
+}
+.photograph-header-info h3 {
+  margin: 15px 0;
+  color: #901c1c;
+}
+
+/* *------buton de tri ------------- */
+.photograph-tri form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0px 48px 100px;
+  height: 60px;
+  width: auto;
+}
+
+.photograph-tri label {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 25px;
+}
+
+.photograph-tri select {
+  background-color: #901c1c;
+  color: #fff;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 5px;
+}
+
+.photo-container {
+  margin: 0 100px 0px 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* gap: 5%; */
+}
+
+.photo-container-card {
+  margin: 7%;
+}
+
+.photo-container img,
+.photo-container video {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  aspect-ratio: 1/1;
+}
+
+.photo-card-info {
+  display: flex;
+  justify-content: space-between;
+  color: #901c1c;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.photo-card-info i {
+  cursor: pointer;
+  font-size: 21px;
+  pointer-events: none;
+  /*  Pour que les i (coeur) ne soit pas prit en compte dans le for each au click */
+  margin-left: 10px;
+}
+
+.photo-card-info button {
+  cursor: pointer;
+  font-size: 21px;
+  /* margin-left: 10px; */
+  background-color: transparent;
+  border: none;
+  color: #901c1c;
+}
+
+/* *----LIKE-CARD--------------------------- */
+
+.like-card {
+  position: fixed;
+  bottom: -1px;
+  right: 5%;
+  height: 74px;
+  width: 340px;
+  border-radius: 5px;
+  background: #db8876;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* ------------ */
+/* *-----LIGHT BOX ----------------------- */
+/* ------------ */
+
+.lightbox-modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(255, 255, 255);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-modal > i {
+  color: #901c1c;
+  font-size: 70px;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.btn-left {
+  color: #901c1c;
+  font-size: 62px;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.btn-right {
+  color: #901c1c;
+  font-size: 62px;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.lightbox-photo img,
+.lightbox-photo video {
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.lightbox-photo h3 {
+  font-size: 24px;
+  color: #901c1c;
+}
+
+img:focus,
+video:focus,
+button:focus,
+select:focus,
+i:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: #d3573c solid 4px;
+}
+
+input[type="submit"]:focus {
+  outline: #ffffff solid 4px;
+}
