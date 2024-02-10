@@ -10,7 +10,7 @@ async function getPhotographers() {
 
     return responseJS;
   } catch (error) {
-    console.log(error, "erreur");
+    console.log(error, "erreur avec le JSON");
   }
 
   // et bien retourner le tableau photographers seulement une fois récupéré
