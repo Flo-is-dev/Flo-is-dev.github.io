@@ -1,0 +1,579 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color-red: #9cb4fb;
+  --main-txt-lightgray: #74798c;
+  --main-bg-black: #030302;
+  --main-bg-gray: #282d30;
+  --main-bg-lightgray: #fbfbfb;
+  --main-bg-yellow: #f5e9d1;
+  background-color: #edf1ff;
+}
+
+@font-face {
+  font-family: "roboto regular";
+  src: url("./assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "roboto bold";
+  src: url("./assets/fonts/Roboto/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: "albert regular";
+  src: url("./assets/fonts/Albert_Sans/static/AlbertSans-Regular.ttf");
+}
+@font-face {
+  font-family: "roboto bold";
+  src: url("./assets/fonts/Roboto/Roboto-Bold.ttf");
+}
+
+body,
+button {
+  font-family: "albert regular", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.appContainer {
+  max-width: 1440px;
+  height: 100vh;
+  /* margin: auto; */
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 500;
+  font-family: "roboto bold", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-family: "roboto bold", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding: 1.1rem 0.9rem 0.7rem 0.8rem;
+  border: 2px solid rgb(232, 232, 232);
+  border-radius: 12px;
+  transition: border 0.15s ease-out;
+}
+
+a:hover {
+  border: 2px solid var(--main-color-red);
+}
+
+p {
+  font-size: 16px;
+  font-family: "roboto regular", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.red {
+  color: var(--main-color-red);
+}
+
+/* --------------------------------------------------------- */
+/* --------------login page---------------------- */
+/* --------------------------------------------------------- */
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg, #c1d0ff, #facedd);
+  position: relative;
+  opacity: 1;
+}
+
+.backgroundApi {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(20deg, #1c3789, #7e1639);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.backgroundApi.active {
+  opacity: 1;
+}
+
+.background span.title {
+  font-size: 1.5rem;
+  align-self: baseline;
+}
+
+.loginCardContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 50px;
+  gap: 50px;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 20%) !important;
+}
+
+.loginContainer {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btnUserContainer {
+  display: flex;
+}
+
+.btnUserContainer button {
+  background-color: transparent;
+  border: 1px solid rgb(221, 221, 221);
+  min-width: 85px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  user-select: none;
+  transition: translate 0.2s, box-shadow 0.2s;
+}
+.btnUserContainer button:hover {
+  box-shadow: 0 10px 20px 0 rgba(113, 36, 181, 0.2);
+  translate: 0px -2px;
+}
+
+.btnUserContainer a {
+  border: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--main-color-red);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.switch::before {
+  content: "Mock";
+  position: absolute;
+  left: -80%;
+  top: 25%;
+  width: 50px;
+  font-size: 15px;
+}
+.switch::after {
+  content: "Call API";
+  position: absolute;
+  right: -100%;
+  top: 25%;
+  font-size: 15px;
+}
+
+/* --------------------------------------------------------- */
+/* --------------User page---------------------- */
+/* --------------------------------------------------------- */
+
+/* header {
+  position: sticky;
+  height: 10vh;
+  width: 100vw;
+  background-color: var(--main-bg-black);
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 2;
+} */
+
+header {
+  position: absolute;
+  bottom: 0;
+  /* background-color: var(--main-bg-black); */
+  height: 95vh;
+  max-width: 100px;
+  width: 5rem;
+  padding-block: 0.5rem;
+  margin-block: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 60px;
+  transition: border 0.1s ease-out;
+  background-color: white;
+}
+header:hover {
+  border: 1px solid var(--main-color-red);
+}
+
+.logo {
+  max-width: 215px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  scale: 1.2;
+}
+
+.logo img {
+  scale: 0.75;
+}
+
+nav {
+  width: 80%;
+  max-width: 900px;
+}
+
+nav ul,
+.param ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+nav li:not(:last-child),
+.param li:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
+}
+
+nav button {
+  border: none;
+  background-color: transparent;
+  color: #9cb4fb;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  text-decoration: underline;
+}
+
+aside {
+  position: absolute;
+  top: 0;
+  background-color: var(--main-bg-black);
+  height: 100vh;
+  max-width: 100px;
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.asideIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+.asideIconContainer img {
+  scale: 0.8;
+}
+
+aside small {
+  rotate: 270deg;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  text-wrap: nowrap;
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  translate: -50%;
+}
+
+.contentContainer {
+  margin: 0;
+  height: 100vh;
+  width: calc(100% - 10vw);
+  margin-left: max(10vw, 100px);
+  padding-left: 6vw;
+  padding-top: 5vh;
+  /* padding-right: 70px; */
+  overflow: hidden;
+}
+
+.contentContainer > p {
+  margin-top: 2%;
+  /* margin-bottom: 6%; */
+}
+
+.contentBoard {
+  /* background-color: lightsalmon; */
+  height: 90%;
+  width: 1025px;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "ch ch ch ac"
+    "li tl cr ac";
+  scale: 0.9;
+  margin-left: calc(-8vw - 5px);
+  margin-top: 7vh;
+}
+
+.contentBoard h3 {
+  color: #20253a;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "roboto bold", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.chart,
+.line,
+.toile,
+.cercle,
+.activityCard {
+  background-color: var(--main-bg-lightgray);
+  border-radius: 12px;
+  max-height: 36vh;
+  /* max-height: calc(100% - 14px); */
+  max-width: 300px;
+}
+
+.chart {
+  max-width: 800px;
+}
+
+.line {
+  background-color: var(--main-color-red);
+}
+.toile {
+  background-color: var(--main-bg-gray);
+}
+
+.chart {
+  grid-area: ch;
+  height: 250px;
+  position: relative;
+}
+
+.chart h3 {
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 4%;
+}
+
+.chart-legend {
+  position: absolute;
+  top: 10%;
+  left: 60%;
+  display: flex;
+  gap: 10px;
+}
+
+.legend-poids,
+.legend-calories {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--main-txt-lightgray);
+}
+
+.legend-poids > div {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background-color: #282d30;
+}
+.legend-calories > div {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background-color: var(--main-color-red);
+}
+
+.line {
+  grid-area: li;
+  position: relative;
+}
+
+.line h3 {
+  font-family: "roboto regular", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: left;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: white;
+  opacity: 0.5;
+  line-height: 26px;
+  max-width: 150px;
+}
+
+.line .custom-tooltip p {
+  padding: 0;
+  font-size: 14px;
+}
+.line .custom-tooltip {
+  background-color: white;
+  color: black;
+}
+
+.toile {
+  grid-area: tl;
+}
+
+.cercle {
+  grid-area: cr;
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+.cercle p {
+  color: var(--main-txt-lightgray);
+  line-height: 25px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.cercle h3 {
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+}
+
+.circleScore {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cercle-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 71%;
+  height: 63%;
+  border: 11px solid #7ed091;
+  border-radius: 100px;
+}
+
+.activityContainer {
+  grid-area: ac;
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 4%;
+}
+
+.activityCard {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "img an an"
+    "img at at";
+}
+
+.activityCard img {
+  grid-area: img;
+}
+
+.activityNumber {
+  grid-area: an;
+  margin: auto;
+  margin-left: 15px;
+  color: var(--main-bg-gray);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.activityTitle {
+  grid-area: at;
+  margin: auto;
+  margin-left: 15px;
+  color: var(--main-txt-lightgray);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.custom-tooltip p {
+  padding: 10px 0px;
+  font-size: 1rem;
+}
+.custom-tooltip {
+  background-color: var(--main-color-red);
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.errorData {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-wrap: balance;
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.736);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 80%;
+}

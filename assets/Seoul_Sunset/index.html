@@ -1,151 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seoul Tones</title>
-    <link rel="icon" href="./images/logo2.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Animation de changement de couleur</title>
+    <style>
+        .color-change-block {
+            background-color: black;
+            transition: background-color 1s ease-out;
+        }
+
+        .color-change-block.white {
+            background-color: white;
+        }
+    </style>
 </head>
 
-
-
 <body>
+    <div style="height: 300vh;" class="color-change-block"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const block = document.querySelector('.color-change-block');
 
-
-    <section class="hero">
-
-        <h1 class="hero__title">
-            <div data-hidden>
-                <span>S</span>
-                <span>e</span>
-                <span>o</span>
-                <span>u</span>
-                <span>l</span>
-
-            </div>
-            <div data-hidden>
-                <span>T</span>
-                <span>o</span>
-                <span>n</span>
-                <span>e</span>
-                <span>s</span>
-            </div>
-
-            <div data-hidden style="font-size: 56px;margin-top: 50px;letter-spacing: 1px;">
-                <span>서</span>
-                <span>울</span>
-                <span>-</span>
-                <span>한</span>
-                <span>국</span>
-            </div>
-        </h1>
-        <div class="hero__images">
-            <img src="./images/seoul1.jpg" data-hidden />
-            <img src="./images/seoul2.jpg" data-hidden />
-            <img src="./images/logo3.png" data-hidden />
-            <img src="./images/seoul4.jpg" data-hidden />
-            <img src="./images/bcbang.png" style="object-fit: contain;" data-hidden />
-            <img src="./images/seoul3.jpg" data-hidden />
-            <img src="./images/seoul5.jpg" data-hidden />
-
-
-        </div>
-
-    </section>
-
-
-
-    <section class="text-block">
-
-        <div class="container">
-            <div class="text__effect">
-                <div class="text__overlay"></div>
-                <p>
-                    If on a rainy evening you are approached in a telephone
-                </p>
-            </div>
-            <div class="text__effect">
-                <div class="text__overlay"></div>
-                <p>
-                    booth by a man carrying a purple umbrella...
-                </p>
-            </div>
-            <div class="text__effect">
-                <div class="text__overlay"></div>
-                <p>
-                    I highly recommend that you like television.
-                </p>
-            </div>
-
-            <div class="text__effect">
-                <div class="text__overlay"></div>
-                <p>
-                    In water, a grain of sand and a rock sink in the same way.
-
-                </p>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section class="fullwidth-image">
-
-        <div class="fullwidth-image__overlay"></div>
-        <div class="fullwidth-image__text">
-            <h2>2024 SUNSET</h2>
-
-            <p>
-                My home, my dreams.<br>
-                I am amazed every night, when I see you in my dreams.
-                When I look at the moon. <br>I see the tower to the north.
-            </p>
-        </div>
-        <img src="./images/seoul-bg.jpg" />
-
-    </section>
-
-
-    <section class="join-us">
-
-        <div class="join-us__inner">
-            <h2 class="join-us__title">
-                Join the
-                <span class="mission">
-                    mission
-                    <svg viewBox="0 0 634 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.40051 2.37525C1.40051 2.37525 68.8688 48.875 223.369 20.375C377.869 -8.125 633.4 12.3911 633.4 12.3911"
-                            stroke="black" stroke-width="4" />
-                    </svg>
-                </span>
-            </h2>
-            <p class="join-us__text">
-                Leave your email to be part of the email list.
-            </p>
-
-            <a href="https://flo-is-dev.github.io/" class="animated-link">Sign me up</a>
-        </div>
-
-    </section>
-
-
-    <!-- -------  JS -------------- -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
-    <script src="index.js"></script>
-
-
-
+            window.addEventListener('scroll', () => {
+                const changePoint = window.innerHeight * 1.5;
+                if (window.scrollY >= changePoint) {
+                    block.classList.add('white');
+                } else {
+                    block.classList.remove('white');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
