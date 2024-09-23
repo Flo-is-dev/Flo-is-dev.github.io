@@ -19,8 +19,9 @@
 
         <div class="cookiesContent" id="cookiesPopup">
             <button id="closePopup" class="close">✖</button>
-            <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png" alt="cookies-img" />
-            <p>2 algorythles ont été créés et comparer pour réaliser ce projet</p>
+            <img src="./assets/img/icon-algo.png" alt="algo-img" style="z-index: 2;" />
+            <img src="./assets/img/icon-algo.png" alt="algo-img" id="algoImg2" />
+            <p><strong>2 algorithmes</strong> ont été créés et comparés pour réaliser ce projet</p>
             <a class="accept" target="_blank" href="./assets/docs/Fiche_d_investigation_de_fonctionnalité.pdf">Consulter
                 le rapport</a>
         </div>
@@ -53,92 +54,97 @@
         </header>
 
         <aside>
+            <div>
+                <h3 id="recetteNumber">1500 recettes</h3>
+            </div>
 
-            <div class="tri-container" id="ingredients">
-                <div class="tri-container-sticky">
-                    <div class="tri-title">
-                        <h3> Ingrédients </h3>
-                        <i class="fa-solid fa-chevron-down "></i>
+            <div class="tri-main-container">
+                <div class="tri-container" id="ingredients">
+                    <div class="tri-container-sticky">
+                        <div class="tri-title">
+                            <h3> Ingrédients </h3>
+                            <i class="fa-solid fa-chevron-down "></i>
+                        </div>
+
+                        <div class="tri-search hidden-bloc">
+                            <input type="text" id="inputIngredients">
+                            <button id="tri-search">
+                                <span id="removeTriIngredients">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </span>
+                                <span>
+                                    <i class="fa-solid fa-magnifying-glass fa-xs"></i>
+                                </span>
+                            </button>
+                        </div>
+
+
                     </div>
+                    <div class="tri-list hidden-bloc">
 
-                    <div class="tri-search hidden-bloc">
-                        <input type="text" id="inputIngredients">
-                        <button id="tri-search">
-                            <span id="removeTriIngredients">
-                                <i class="fa-solid fa-xmark"></i>
-                            </span>
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass fa-xs"></i>
-                            </span>
-                        </button>
+                    </div>
+                </div>
+
+
+                <div class="tri-container" id="appareils">
+                    <div class="tri-container-sticky">
+                        <div class="tri-title">
+                            <h3> Appareils </h3>
+                            <i class="fa-solid fa-chevron-down "></i>
+                        </div>
+                        <div class="tri-search hidden-bloc">
+                            <input type="text" id="inputAppareils">
+                            <button id="tri-search">
+                                <span id="removeTriAppareils">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </span>
+                                <span>
+                                    <i class="fa-solid fa-magnifying-glass fa-xs"></i>
+                                </span>
+                            </button>
+                        </div>
+
+
+                    </div>
+                    <div class="tri-list hidden-bloc">
+
                     </div>
 
 
                 </div>
-                <div class="tri-list hidden-bloc">
+
+                <div class="tri-container" id="ustensiles">
+                    <div class="tri-container-sticky">
+                        <div class="tri-title">
+                            <h3> Ustensiles </h3>
+                            <i class="fa-solid fa-chevron-down "></i>
+                        </div>
+                        <div class="tri-search hidden-bloc">
+                            <input type="text" id="inputUstensiles">
+                            <button id="tri-search">
+                                <span id="removeTriUstensiles">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </span>
+                                <span>
+                                    <i class="fa-solid fa-magnifying-glass fa-xs"></i>
+                                </span>
+                            </button>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="tri-list hidden-bloc">
+
+                    </div>
+
+
 
                 </div>
             </div>
 
 
-            <div class="tri-container" id="appareils">
-                <div class="tri-container-sticky">
-                    <div class="tri-title">
-                        <h3> Appareils </h3>
-                        <i class="fa-solid fa-chevron-down "></i>
-                    </div>
-                    <div class="tri-search hidden-bloc">
-                        <input type="text" id="inputAppareils">
-                        <button id="tri-search">
-                            <span id="removeTriAppareils">
-                                <i class="fa-solid fa-xmark"></i>
-                            </span>
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass fa-xs"></i>
-                            </span>
-                        </button>
-                    </div>
-
-
-                </div>
-                <div class="tri-list hidden-bloc">
-
-                </div>
-
-
-            </div>
-
-            <div class="tri-container" id="ustensiles">
-                <div class="tri-container-sticky">
-                    <div class="tri-title">
-                        <h3> Ustensiles </h3>
-                        <i class="fa-solid fa-chevron-down "></i>
-                    </div>
-                    <div class="tri-search hidden-bloc">
-                        <input type="text" id="inputUstensiles">
-                        <button id="tri-search">
-                            <span id="removeTriUstensiles">
-                                <i class="fa-solid fa-xmark"></i>
-                            </span>
-                            <span>
-                                <i class="fa-solid fa-magnifying-glass fa-xs"></i>
-                            </span>
-                        </button>
-                    </div>
-
-
-                </div>
-
-
-                <div class="tri-list hidden-bloc">
-
-                </div>
-
-
-
-            </div>
-
-            <h3 id="recetteNumber">1500 recettes</h3>
         </aside>
         <section class="tag-section">
 
