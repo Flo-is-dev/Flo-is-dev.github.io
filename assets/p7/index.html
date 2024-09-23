@@ -150,33 +150,32 @@
     </main>
 
     <script>
-        // Sélection des éléments
         const overlay = document.querySelector('.overlay');
         const cookiesPopup = document.getElementById('cookiesPopup');
         const closePopupButton = document.getElementById('closePopup');
 
-        // Fonction pour afficher l'overlay et le popup
+
         function showPopup() {
             overlay.classList.add('active');
             cookiesPopup.classList.add('active');
         }
 
-        // Fonction pour cacher l'overlay et le popup
+
         function hidePopup() {
             cookiesPopup.classList.remove('active');
 
-            // Attendre la fin de la transition du popup avant de cacher l'overlay
+
             setTimeout(() => {
                 overlay.classList.remove('active');
-            }, 500); // Correspond à la durée de l'animation CSS
+            }, 500);
         }
 
-        // Afficher le popup après le chargement de la page
+
         window.onload = () => {
-            setTimeout(showPopup, 100); // Petit délai pour un meilleur effet
+            setTimeout(showPopup, 100);
         };
 
-        // Cacher le popup au clic sur la croix ou sur l'overlay
+
         closePopupButton.addEventListener('click', hidePopup);
         overlay.addEventListener('click', hidePopup);
 
