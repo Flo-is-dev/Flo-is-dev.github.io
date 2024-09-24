@@ -338,10 +338,11 @@ aside {
   background: #ededed;
   min-height: 54px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 20px 150px;
 }
 
 .tag-element {
@@ -606,5 +607,9 @@ aside {
 
   .txt-container {
     width: 90%;
+  }
+  .tag-section {
+    justify-content: center;
+    padding: 20px 50px;
   }
 }
