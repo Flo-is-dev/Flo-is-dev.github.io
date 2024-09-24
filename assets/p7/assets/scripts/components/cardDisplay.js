@@ -14,7 +14,7 @@ const cardDisplayHtml = (recipe) => {
   cardTop.classList.add("card-top");
   card.appendChild(cardTop);
 
-  cardTop.innerHTML = /*html*/ ` <img src="./assets/img/${recipe.image}" alt="image de ${recipe.name}" />
+  cardTop.innerHTML = /*html*/ ` <img src="./assets/img/${recipe.image}" loading="lazy" decoding="async" alt="image de ${recipe.name}"  />
                                 <span class="timer">${recipe.time}min</span>`;
 
   const cardBottom = document.createElement("div");
