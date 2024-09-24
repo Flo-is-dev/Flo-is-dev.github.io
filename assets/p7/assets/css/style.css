@@ -171,7 +171,7 @@ aside {
   flex: 1;
 }
 .tri-main-container div:has(h3) {
-  align-self: center;
+  align-self: baseline;
 }
 
 .tri-container {
@@ -336,11 +336,9 @@ aside {
 
 .tag-section {
   background: #ededed;
-  padding-left: 150px;
   min-height: 54px;
-  /* min-width: 1000px; */
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
