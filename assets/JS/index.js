@@ -5,9 +5,15 @@ const scroll = new LocomotiveScroll({
   smartphone: { smooth: true },
 });
 
-// body color change
+// Mise à jour du scroll après le chargement de la page
+window.addEventListener("load", () => {
+  scroll.update();
+});
+
 scroll.on("scroll", () => {
-  if (document.querySelector("#color.is-inview")) {
+  const colorElement = document.querySelector("#color");
+
+  if (colorElement && colorElement.classList.contains("is-inview")) {
     document.body.style.background = "#000101";
     document.body.style.color = "#fefeff";
   } else {
