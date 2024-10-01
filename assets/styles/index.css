@@ -12,13 +12,13 @@
 }
 * .title {
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 * .skills {
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 *::-moz-selection {
@@ -34,10 +34,10 @@
   font-weight: bold;
   border-radius: 50px;
 }
-
+/* 
 html {
   scroll-behavior: smooth;
-}
+} */
 
 body {
   font-family: "quicksand", serif;
@@ -354,7 +354,7 @@ header h2 {
   position: absolute;
   top: 50%;
   transform: translate(-50px, -50%);
-  margin-left: 8vw;
+  margin-inline: 4vw;
   transition: 0.4s ease-out;
   opacity: 0;
 }
@@ -364,7 +364,7 @@ header h2 {
 }
 
 .projects-infos p {
-  font-size: 2rem;
+  font-size: 1.4rem;
   margin-top: 1.5vw;
   color: #fefeff;
 }
@@ -403,4 +403,9 @@ footer a {
 .img2 {
   background: url(../img/f-gironde.jpg) center/cover;
   border-radius: 5px;
-}/*# sourceMappingURL=index.css.map */
+}
+
+[data-scroll-container] {
+  height: auto;
+  overflow: visible;
+}
