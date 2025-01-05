@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body,
+      h1 {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      h2 {
+        mix-blend-mode: overlay;
+        font-size: 3rem;
+      }
+
+      .box {
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+      }
+      .pinSection {
+        height: 100%;
+        width: 100%;
+      }
+      .image {
+        top: -50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 550px;
+        width: 500px;
+      }
+      .image-text {
+        top: -95%;
+        left: 52%;
+        width: 45%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+      .scrollmagic-pin-spacer {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      .event1 {
+        background-color: #e27d60;
+      }
+      .event1 .image {
+        top: 50%;
+        background-image: url(./img/soju_more_position_of_this_bird_tattoo_is_japanese_style_tattoo_40c09280-a546-445b-9456-0cabe64cac97.png);
+      }
+      .event1 .image-text {
+        top: 5%;
+      }
+      .event2 {
+        background-color: black;
+      }
+      .event2 .image {
+        background-image: url(./img/soju_Green_hills_vibrant_abstraction_serene_dusk_digital_painti_7789ccd2-9456-4855-b821-1ac025ca2c02.png);
+      }
+      .event3 {
+        background-color: #e8a87c;
+      }
+      .event3 .image {
+        background-image: url(./img/soju_high-resolution_website_website_UI_design_awwwards_css_des_ed79d324-2812-4da7-9c23-d90f065eb86f.png);
+      }
+      .event4 {
+        background-color: #c38d9e;
+      }
+      .event4 .image {
+        background-image: url(./img/soju_high-resolution_website_website_UI_design_awwwards_css_des_efa597ff-de30-41fd-90c4-60e0b4ca8432.png);
+      }
+    </style>
+  </head>
+  <body>
+    <header style="height: 100vh; background-color: lightblue">
+      <h1>MENU</h1>
+    </header>
+    <div class="box event1">
+      <div class="pinSection">
+        <div class="image"></div>
+        <h2 class="image-text rellax" data-rellax-speed="-1">
+          Avancons vers un avenir <br />plus écologique
+        </h2>
+      </div>
+    </div>
+
+    <div class="box event2">
+      <div class="pinSection">
+        <div class="image"></div>
+        <h2
+          class="image-text rellax"
+          style="color: white"
+          data-rellax-speed="-1"
+        >
+          Avancons vers un avenir <br />
+          plus durable
+        </h2>
+      </div>
+    </div>
+
+    <div class="box event3">
+      <div class="pinSection">
+        <div class="image"></div>
+        <h2
+          class="image-text rellax"
+          style="color: #ab4500"
+          data-rellax-speed="-1"
+        >
+          Avancons vers un avenir <br />plus équitable
+        </h2>
+      </div>
+    </div>
+
+    <div class="box event4">
+      <div class="pinSection">
+        <div class="image"></div>
+        <h2
+          class="image-text rellax"
+          style="color: #bf164b"
+          data-rellax-speed="-1"
+        >
+          Avancons vers un avenir <br />plus responsable
+        </h2>
+      </div>
+    </div>
+
+    <header style="height: 100vh; background-color: lightblue">
+      <h1>MENU</h1>
+    </header>
+
+    <!-- Rellax js (parallax)-->
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+
+    <!-- Scroll Magic -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script>
+      var rellax = new Rellax(".rellax");
+
+      const controller = new ScrollMagic.Controller();
+
+      new ScrollMagic.Scene({
+        triggerElement: ".event2",
+        triggerHook: "onEnter",
+        duration: "100%",
+      })
+        .setPin(".event1 .pinSection")
+        .addIndicators()
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: ".event2",
+        triggerHook: "onEnter",
+        duration: "200%",
+      })
+        .setPin(".event2 .pinSection")
+        .addIndicators()
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: ".event3",
+        triggerHook: "onEnter",
+        duration: "200%",
+      })
+        .setPin(".event3 .pinSection")
+        .addIndicators()
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: ".event4",
+        triggerHook: "onEnter",
+        duration: "100%",
+      })
+        .setPin(".event4 .pinSection")
+        .addIndicators()
+        .addTo(controller);
+    </script>
+  </body>
+</html>
